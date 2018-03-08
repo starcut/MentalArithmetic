@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aas-0O-7ID">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment version="2304" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="xza-F6-6EH">
+            <objects>
+                <navigationController id="aas-0O-7ID" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Siq-Ud-Mdb">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Ypk-ff-zM7" kind="relationship" relationship="rootViewController" id="t92-cx-myV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Oxp-Ml-g8y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-371" y="88"/>
+        </scene>
+        <!--選択-->
+        <scene sceneID="dhx-Jn-3CL">
+            <objects>
+                <viewController id="Ypk-ff-zM7" customClass="ViewController" customModule="MentalArithmetic" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nBD-kg-45a">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rn3-fx-epX">
+                                <rect key="frame" x="238" y="338" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="Ddh-b6-6dj" kind="show" id="X4V-Ms-Dne"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="eD1-fN-nzB"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="選択" id="WQs-qX-iBd"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7bg-zA-tdG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="390" y="88"/>
+        </scene>
+        <!--Calculation View Controller-->
+        <scene sceneID="cRx-HL-NeZ">
+            <objects>
+                <viewController id="Ddh-b6-6dj" customClass="CalculationViewController" customModule="MentalArithmetic" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gqB-gp-9iV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8BI-qb-tJG">
+                                <rect key="frame" x="0.0" y="64" width="375" height="275"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="8BI-qb-tJG" firstAttribute="top" secondItem="n16-P6-NIy" secondAttribute="top" id="3c7-UX-gMu"/>
+                            <constraint firstItem="n16-P6-NIy" firstAttribute="trailing" secondItem="8BI-qb-tJG" secondAttribute="trailing" id="Smw-c3-NiZ"/>
+                            <constraint firstItem="8BI-qb-tJG" firstAttribute="leading" secondItem="n16-P6-NIy" secondAttribute="leading" id="fwO-h0-tT9"/>
+                            <constraint firstItem="8BI-qb-tJG" firstAttribute="bottom" secondItem="n16-P6-NIy" secondAttribute="bottom" id="ugF-aH-Ldv"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="n16-P6-NIy"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="l09-Em-RTb"/>
+                    <connections>
+                        <outlet property="tableView" destination="8BI-qb-tJG" id="dhJ-bt-Smn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YpD-cm-BCu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1116" y="87.706146926536732"/>
+        </scene>
+    </scenes>
+</document>

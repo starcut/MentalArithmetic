@@ -1,0 +1,607 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FC28CCBE2042A906008B05B5 /* InputBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC28CCBD2042A906008B05B5 /* InputBoard.swift */; };
+		FC28CCC02042A915008B05B5 /* InputBoard.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC28CCBF2042A915008B05B5 /* InputBoard.xib */; };
+		FCB57852202495B400244642 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB57851202495B400244642 /* AppDelegate.swift */; };
+		FCB57854202495B400244642 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB57853202495B400244642 /* ViewController.swift */; };
+		FCB57857202495B400244642 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCB57855202495B400244642 /* Main.storyboard */; };
+		FCB57859202495B400244642 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCB57858202495B400244642 /* Assets.xcassets */; };
+		FCB5785C202495B400244642 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCB5785A202495B400244642 /* LaunchScreen.storyboard */; };
+		FCB57867202495B400244642 /* MentalArithmeticTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB57866202495B400244642 /* MentalArithmeticTests.swift */; };
+		FCB57872202495B400244642 /* MentalArithmeticUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB57871202495B400244642 /* MentalArithmeticUITests.swift */; };
+		FCB578852029C8DF00244642 /* CalculationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB578842029C8DF00244642 /* CalculationViewController.swift */; };
+		FCB5788A202DC56E00244642 /* QuestionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB57888202DC56E00244642 /* QuestionCell.swift */; };
+		FCB5788B202DC56E00244642 /* QuestionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCB57889202DC56E00244642 /* QuestionCell.xib */; };
+		FCB5788E202EA8B800244642 /* CheckPointCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB5788C202EA8B800244642 /* CheckPointCell.swift */; };
+		FCB5788F202EA8B800244642 /* CheckPointCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCB5788D202EA8B800244642 /* CheckPointCell.xib */; };
+		FCC91B30202EC05400E578C3 /* CalcStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC91B2F202EC05400E578C3 /* CalcStatusView.swift */; };
+		FCC91B32202EC05F00E578C3 /* CalcStatusView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCC91B31202EC05F00E578C3 /* CalcStatusView.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FCB57863202495B400244642 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FCB57846202495B400244642 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FCB5784D202495B400244642;
+			remoteInfo = MentalArithmetic;
+		};
+		FCB5786E202495B400244642 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FCB57846202495B400244642 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FCB5784D202495B400244642;
+			remoteInfo = MentalArithmetic;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FC28CCBD2042A906008B05B5 /* InputBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputBoard.swift; sourceTree = "<group>"; };
+		FC28CCBF2042A915008B05B5 /* InputBoard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InputBoard.xib; sourceTree = "<group>"; };
+		FCB5784E202495B400244642 /* MentalArithmetic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MentalArithmetic.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCB57851202495B400244642 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FCB57853202495B400244642 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FCB57856202495B400244642 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FCB57858202495B400244642 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FCB5785B202495B400244642 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FCB5785D202495B400244642 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FCB57862202495B400244642 /* MentalArithmeticTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MentalArithmeticTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCB57866202495B400244642 /* MentalArithmeticTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentalArithmeticTests.swift; sourceTree = "<group>"; };
+		FCB57868202495B400244642 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FCB5786D202495B400244642 /* MentalArithmeticUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MentalArithmeticUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCB57871202495B400244642 /* MentalArithmeticUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentalArithmeticUITests.swift; sourceTree = "<group>"; };
+		FCB57873202495B400244642 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FCB578842029C8DF00244642 /* CalculationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationViewController.swift; sourceTree = "<group>"; };
+		FCB57888202DC56E00244642 /* QuestionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionCell.swift; sourceTree = "<group>"; };
+		FCB57889202DC56E00244642 /* QuestionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuestionCell.xib; sourceTree = "<group>"; };
+		FCB5788C202EA8B800244642 /* CheckPointCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckPointCell.swift; sourceTree = "<group>"; };
+		FCB5788D202EA8B800244642 /* CheckPointCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckPointCell.xib; sourceTree = "<group>"; };
+		FCC91B2F202EC05400E578C3 /* CalcStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalcStatusView.swift; sourceTree = "<group>"; };
+		FCC91B31202EC05F00E578C3 /* CalcStatusView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalcStatusView.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FCB5784B202495B400244642 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCB5785F202495B400244642 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCB5786A202495B400244642 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FCB57845202495B400244642 = {
+			isa = PBXGroup;
+			children = (
+				FCB57850202495B400244642 /* MentalArithmetic */,
+				FCB57865202495B400244642 /* MentalArithmeticTests */,
+				FCB57870202495B400244642 /* MentalArithmeticUITests */,
+				FCB5784F202495B400244642 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FCB5784F202495B400244642 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FCB5784E202495B400244642 /* MentalArithmetic.app */,
+				FCB57862202495B400244642 /* MentalArithmeticTests.xctest */,
+				FCB5786D202495B400244642 /* MentalArithmeticUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FCB57850202495B400244642 /* MentalArithmetic */ = {
+			isa = PBXGroup;
+			children = (
+				FCB57851202495B400244642 /* AppDelegate.swift */,
+				FCB57853202495B400244642 /* ViewController.swift */,
+				FCB578842029C8DF00244642 /* CalculationViewController.swift */,
+				FCB57855202495B400244642 /* Main.storyboard */,
+				FCB57858202495B400244642 /* Assets.xcassets */,
+				FCB5785A202495B400244642 /* LaunchScreen.storyboard */,
+				FCB5785D202495B400244642 /* Info.plist */,
+				FCB578812024972E00244642 /* Question */,
+				FC28CCBD2042A906008B05B5 /* InputBoard.swift */,
+				FC28CCBF2042A915008B05B5 /* InputBoard.xib */,
+			);
+			path = MentalArithmetic;
+			sourceTree = "<group>";
+		};
+		FCB57865202495B400244642 /* MentalArithmeticTests */ = {
+			isa = PBXGroup;
+			children = (
+				FCB57866202495B400244642 /* MentalArithmeticTests.swift */,
+				FCB57868202495B400244642 /* Info.plist */,
+			);
+			path = MentalArithmeticTests;
+			sourceTree = "<group>";
+		};
+		FCB57870202495B400244642 /* MentalArithmeticUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FCB57871202495B400244642 /* MentalArithmeticUITests.swift */,
+				FCB57873202495B400244642 /* Info.plist */,
+			);
+			path = MentalArithmeticUITests;
+			sourceTree = "<group>";
+		};
+		FCB578812024972E00244642 /* Question */ = {
+			isa = PBXGroup;
+			children = (
+				FCB57888202DC56E00244642 /* QuestionCell.swift */,
+				FCB57889202DC56E00244642 /* QuestionCell.xib */,
+				FCB5788C202EA8B800244642 /* CheckPointCell.swift */,
+				FCB5788D202EA8B800244642 /* CheckPointCell.xib */,
+				FCC91B2F202EC05400E578C3 /* CalcStatusView.swift */,
+				FCC91B31202EC05F00E578C3 /* CalcStatusView.xib */,
+			);
+			path = Question;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FCB5784D202495B400244642 /* MentalArithmetic */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FCB57876202495B400244642 /* Build configuration list for PBXNativeTarget "MentalArithmetic" */;
+			buildPhases = (
+				FCB5784A202495B400244642 /* Sources */,
+				FCB5784B202495B400244642 /* Frameworks */,
+				FCB5784C202495B400244642 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MentalArithmetic;
+			productName = MentalArithmetic;
+			productReference = FCB5784E202495B400244642 /* MentalArithmetic.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FCB57861202495B400244642 /* MentalArithmeticTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FCB57879202495B400244642 /* Build configuration list for PBXNativeTarget "MentalArithmeticTests" */;
+			buildPhases = (
+				FCB5785E202495B400244642 /* Sources */,
+				FCB5785F202495B400244642 /* Frameworks */,
+				FCB57860202495B400244642 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FCB57864202495B400244642 /* PBXTargetDependency */,
+			);
+			name = MentalArithmeticTests;
+			productName = MentalArithmeticTests;
+			productReference = FCB57862202495B400244642 /* MentalArithmeticTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FCB5786C202495B400244642 /* MentalArithmeticUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FCB5787C202495B400244642 /* Build configuration list for PBXNativeTarget "MentalArithmeticUITests" */;
+			buildPhases = (
+				FCB57869202495B400244642 /* Sources */,
+				FCB5786A202495B400244642 /* Frameworks */,
+				FCB5786B202495B400244642 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FCB5786F202495B400244642 /* PBXTargetDependency */,
+			);
+			name = MentalArithmeticUITests;
+			productName = MentalArithmeticUITests;
+			productReference = FCB5786D202495B400244642 /* MentalArithmeticUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FCB57846202495B400244642 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = stardust;
+				TargetAttributes = {
+					FCB5784D202495B400244642 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					FCB57861202495B400244642 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = FCB5784D202495B400244642;
+					};
+					FCB5786C202495B400244642 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = FCB5784D202495B400244642;
+					};
+				};
+			};
+			buildConfigurationList = FCB57849202495B400244642 /* Build configuration list for PBXProject "MentalArithmetic" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FCB57845202495B400244642;
+			productRefGroup = FCB5784F202495B400244642 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FCB5784D202495B400244642 /* MentalArithmetic */,
+				FCB57861202495B400244642 /* MentalArithmeticTests */,
+				FCB5786C202495B400244642 /* MentalArithmeticUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FCB5784C202495B400244642 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCB5785C202495B400244642 /* LaunchScreen.storyboard in Resources */,
+				FCB5788B202DC56E00244642 /* QuestionCell.xib in Resources */,
+				FCB57859202495B400244642 /* Assets.xcassets in Resources */,
+				FCC91B32202EC05F00E578C3 /* CalcStatusView.xib in Resources */,
+				FC28CCC02042A915008B05B5 /* InputBoard.xib in Resources */,
+				FCB57857202495B400244642 /* Main.storyboard in Resources */,
+				FCB5788F202EA8B800244642 /* CheckPointCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCB57860202495B400244642 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCB5786B202495B400244642 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FCB5784A202495B400244642 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCB5788E202EA8B800244642 /* CheckPointCell.swift in Sources */,
+				FCB578852029C8DF00244642 /* CalculationViewController.swift in Sources */,
+				FCB57854202495B400244642 /* ViewController.swift in Sources */,
+				FCC91B30202EC05400E578C3 /* CalcStatusView.swift in Sources */,
+				FC28CCBE2042A906008B05B5 /* InputBoard.swift in Sources */,
+				FCB57852202495B400244642 /* AppDelegate.swift in Sources */,
+				FCB5788A202DC56E00244642 /* QuestionCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCB5785E202495B400244642 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCB57867202495B400244642 /* MentalArithmeticTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCB57869202495B400244642 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCB57872202495B400244642 /* MentalArithmeticUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FCB57864202495B400244642 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FCB5784D202495B400244642 /* MentalArithmetic */;
+			targetProxy = FCB57863202495B400244642 /* PBXContainerItemProxy */;
+		};
+		FCB5786F202495B400244642 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FCB5784D202495B400244642 /* MentalArithmetic */;
+			targetProxy = FCB5786E202495B400244642 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FCB57855202495B400244642 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FCB57856202495B400244642 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FCB5785A202495B400244642 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FCB5785B202495B400244642 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FCB57874202495B400244642 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FCB57875202495B400244642 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FCB57877202495B400244642 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3NN78ZST83;
+				INFOPLIST_FILE = MentalArithmetic/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = seekingStar.MentalArithmetic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FCB57878202495B400244642 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3NN78ZST83;
+				INFOPLIST_FILE = MentalArithmetic/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = seekingStar.MentalArithmetic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		FCB5787A202495B400244642 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3NN78ZST83;
+				INFOPLIST_FILE = MentalArithmeticTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = seekingStar.MentalArithmeticTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MentalArithmetic.app/MentalArithmetic";
+			};
+			name = Debug;
+		};
+		FCB5787B202495B400244642 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3NN78ZST83;
+				INFOPLIST_FILE = MentalArithmeticTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = seekingStar.MentalArithmeticTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MentalArithmetic.app/MentalArithmetic";
+			};
+			name = Release;
+		};
+		FCB5787D202495B400244642 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3NN78ZST83;
+				INFOPLIST_FILE = MentalArithmeticUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = seekingStar.MentalArithmeticUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MentalArithmetic;
+			};
+			name = Debug;
+		};
+		FCB5787E202495B400244642 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3NN78ZST83;
+				INFOPLIST_FILE = MentalArithmeticUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = seekingStar.MentalArithmeticUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MentalArithmetic;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FCB57849202495B400244642 /* Build configuration list for PBXProject "MentalArithmetic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FCB57874202495B400244642 /* Debug */,
+				FCB57875202495B400244642 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FCB57876202495B400244642 /* Build configuration list for PBXNativeTarget "MentalArithmetic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FCB57877202495B400244642 /* Debug */,
+				FCB57878202495B400244642 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FCB57879202495B400244642 /* Build configuration list for PBXNativeTarget "MentalArithmeticTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FCB5787A202495B400244642 /* Debug */,
+				FCB5787B202495B400244642 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FCB5787C202495B400244642 /* Build configuration list for PBXNativeTarget "MentalArithmeticUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FCB5787D202495B400244642 /* Debug */,
+				FCB5787E202495B400244642 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FCB57846202495B400244642 /* Project object */;
+}
