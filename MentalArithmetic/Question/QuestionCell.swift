@@ -47,7 +47,7 @@ class QuestionCell: UITableViewCell {
                 anwerNumbwer = firstNumber + secondNumber
                 self.setNumberToItem(inputNumber: firstNumber, calcItem: self.firstItem)
                 self.setNumberToItem(inputNumber: secondNumber, calcItem: self.secondItem)
-                self.setNumberToItem(inputNumber: anwerNumbwer, calcItem: self.answerLabel)
+                self.setNumberToItem(inputNumber: anwerNumbwer, calcItem: self.resultLabel)
                 break;
             // 引き算
             case 1:
@@ -56,7 +56,7 @@ class QuestionCell: UITableViewCell {
                 anwerNumbwer = firstNumber - secondNumber
                 self.setNumberToItem(inputNumber: firstNumber, calcItem: self.firstItem)
                 self.setNumberToItem(inputNumber: secondNumber, calcItem: self.secondItem)
-                self.setNumberToItem(inputNumber: anwerNumbwer, calcItem: self.answerLabel)
+                self.setNumberToItem(inputNumber: anwerNumbwer, calcItem: self.resultLabel)
                 break;
             // 掛け算
             case 2:
@@ -65,7 +65,7 @@ class QuestionCell: UITableViewCell {
                 anwerNumbwer = firstNumber * secondNumber
                 self.setNumberToItem(inputNumber: firstNumber, calcItem: self.firstItem)
                 self.setNumberToItem(inputNumber: secondNumber, calcItem: self.secondItem)
-                self.setNumberToItem(inputNumber: anwerNumbwer, calcItem: self.answerLabel)
+                self.setNumberToItem(inputNumber: anwerNumbwer, calcItem: self.resultLabel)
                 break;
             // 割り算
             case 3:
@@ -74,7 +74,7 @@ class QuestionCell: UITableViewCell {
                 firstNumber = secondNumber * anwerNumbwer
                 self.setNumberToItem(inputNumber: firstNumber, calcItem: self.firstItem)
                 self.setNumberToItem(inputNumber: secondNumber, calcItem: self.secondItem)
-                self.setNumberToItem(inputNumber: anwerNumbwer, calcItem: self.answerLabel)
+                self.setNumberToItem(inputNumber: anwerNumbwer, calcItem: self.resultLabel)
                 break;
             default:
                 break;
