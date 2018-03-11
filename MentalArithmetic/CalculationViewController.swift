@@ -18,6 +18,7 @@ class CalculationViewController: UIViewController, UITableViewDelegate, UITableV
     let CHECK_POINT_CELL_IDENTIFIER = "CheckPointCell"
     
     @IBOutlet var tableView : UITableView!
+    @IBOutlet var keyboardView : InputBoard!
     
     var headerView : CalcStatusView!
     var timeUpdate : Timer!
@@ -31,6 +32,8 @@ class CalculationViewController: UIViewController, UITableViewDelegate, UITableV
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        self.keyboardView = InputBoard.init(frame: self.keyboardView.frame)
         
         self.headerView = CalcStatusView(frame: CGRect(x: 0, y: 0, width: 300, height: 200))
         self.headerView.calcStatusInit(time: 300, hiScore: 0, score: 0)

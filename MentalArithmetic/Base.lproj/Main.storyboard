@@ -60,22 +60,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8BI-qb-tJG">
-                                <rect key="frame" x="0.0" y="64" width="375" height="275"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8BI-qb-tJG">
+                                <rect key="frame" x="0.0" y="64" width="375" height="339"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qRE-9Z-Wvx" customClass="InputBoard" customModule="MentalArithmetic" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="403" width="375" height="264"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="264" id="Dxt-sA-6ty"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="8BI-qb-tJG" firstAttribute="top" secondItem="n16-P6-NIy" secondAttribute="top" id="3c7-UX-gMu"/>
+                            <constraint firstItem="n16-P6-NIy" firstAttribute="bottom" secondItem="qRE-9Z-Wvx" secondAttribute="bottom" id="FQF-Tn-s0Y"/>
+                            <constraint firstItem="qRE-9Z-Wvx" firstAttribute="trailing" secondItem="n16-P6-NIy" secondAttribute="trailing" id="NZ1-Uo-dqI"/>
+                            <constraint firstItem="qRE-9Z-Wvx" firstAttribute="leading" secondItem="n16-P6-NIy" secondAttribute="leading" id="Ne0-9K-CRV"/>
                             <constraint firstItem="n16-P6-NIy" firstAttribute="trailing" secondItem="8BI-qb-tJG" secondAttribute="trailing" id="Smw-c3-NiZ"/>
                             <constraint firstItem="8BI-qb-tJG" firstAttribute="leading" secondItem="n16-P6-NIy" secondAttribute="leading" id="fwO-h0-tT9"/>
-                            <constraint firstItem="8BI-qb-tJG" firstAttribute="bottom" secondItem="n16-P6-NIy" secondAttribute="bottom" id="ugF-aH-Ldv"/>
+                            <constraint firstItem="qRE-9Z-Wvx" firstAttribute="top" secondItem="8BI-qb-tJG" secondAttribute="bottom" id="oBm-CA-qbI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="n16-P6-NIy"/>
                     </view>
                     <navigationItem key="navigationItem" id="l09-Em-RTb"/>
                     <connections>
+                        <outlet property="keyboardView" destination="qRE-9Z-Wvx" id="AM5-zn-Qbs"/>
                         <outlet property="tableView" destination="8BI-qb-tJG" id="dhJ-bt-Smn"/>
                     </connections>
                 </viewController>
