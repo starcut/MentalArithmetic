@@ -20,11 +20,24 @@ class CalculationViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet var tableView : UITableView!
     @IBOutlet var keyboardView : InputBoard!
     
+    // 時間などのステータスビュー
     var headerView : CalcStatusView!
+    // タイマー
     var timeUpdate : Timer!
+    // 問題番号
+    var questionNumber : Int!;
+    // 正答数
+    var correctAnwerCount : Int!;
+    // 現在の問題番号
+    var currentQuestionNumber : Int!;
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.questionNumber = 1;
+        self.correctAnwerCount = 0;
+        self.currentQuestionNumber = 1;
+        
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.setQuestionCell()
@@ -35,7 +48,7 @@ class CalculationViewController: UIViewController, UITableViewDelegate, UITableV
         
         self.keyboardView = InputBoard.init(frame: self.keyboardView.frame)
         
-        self.headerView = CalcStatusView(frame: CGRect(x: 0, y: 0, width: 300, height: 200))
+        self.headerView = CalcStatusView(frame: CGRect(x: 0, y: 0, width: 300, height: CalcStatusView.viewHeight()))
         self.headerView.calcStatusInit(time: 300, hiScore: 0, score: 0)
         
         // タイマーセット
@@ -101,12 +114,39 @@ class CalculationViewController: UIViewController, UITableViewDelegate, UITableV
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: QUESTION_CELL_IDENTIFIER, for: indexPath) as! QuestionCell
         cell.createCalcQuestion()
+        cell.tag = questionNumber
+        questionNumber! += 1
         return cell
     }
     
     // 1秒毎に呼ばれるメソッド
     @objc func updateStatusPerSecond(tm : Timer) {
         self.headerView.minusTime()
-        NSLog("test")
+        
+        self.focusNextQuestion()
+    }
+    
+    func inputAnwer() {
+        
+    }
+    
+    func focusNextQuestion() {
+        let prevQuestionView : QuestionCell = self.tableView!.viewWithTag(currentQuestionNumber) as! QuestionCell
+        prevQuestionView.backgroundColor
+            = UIColor.clear
+        
+        currentQuestionNumber! += 1
+        
+        var focusNextQuestionAnimation : CGFloat = QuestionCell.cellHeight()
+        if currentQuestionNumber > 10 && currentQuestionNumber % 10 == 3 {
+            focusNextQuestionAnimation += CheckPointCell.cellHeight()
+        }
+        if currentQuestionNumber > 2 {
+            tableView.setContentOffset(CGPoint.init(x: tableView.contentOffset.x, y: tableView.contentOffset.y + focusNextQuestionAnimation), animated: true)
+        }
+        
+        let currentQuestionView : QuestionCell = self.tableView!.viewWithTag(currentQuestionNumber) as! QuestionCell
+        currentQuestionView.backgroundColor
+            = UIColor.cyan
     }
 }

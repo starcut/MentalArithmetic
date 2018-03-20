@@ -26,6 +26,17 @@ class InputBoard: UIView {
     }
     
     @IBAction func pushedNumberButton(_ sender: Any) {
-        NSLog("押された")
+        var pushedButtonTag : Int = (sender as! UIButton).tag
+        // 一文字削除が押された
+        if pushedButtonTag == 10 {
+            NSLog("一文字削除")
+        }
+        // 即答ボタンが押された
+        else if pushedButtonTag == 11 {
+            NSLog("即答")
+        }
+        else {
+            NSLog("")
+        }
     }
 }

@@ -15,7 +15,10 @@ class QuestionCell: UITableViewCell {
     @IBOutlet var calckindLabel : UILabel!
     @IBOutlet var resultLabel : UILabel!
     
+    // 計算記号の種類
     let calcKindString : [String] = ["＋", "−", "×", "÷"]
+    // 桁数
+    var answerDigit: Int = 1
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -31,9 +34,9 @@ class QuestionCell: UITableViewCell {
     /**
      計算式を作る
      */
-    func createCalcQuestion() -> Void {
+    func createCalcQuestion() {
         // 計算の種類を決定する
-        var calcKind = (Int)(arc4random_uniform(4))
+        let calcKind = (Int)(arc4random_uniform(4))
         self.setCalcKind(calcKindNumber: calcKind)
         var firstNumber : Int
         var secondNumber : Int
@@ -79,6 +82,7 @@ class QuestionCell: UITableViewCell {
             default:
                 break;
             }
+        self.setAnswerDigit(resultLabel: self.resultLabel)
     }
     
     /**
@@ -95,6 +99,30 @@ class QuestionCell: UITableViewCell {
         self.calckindLabel.text = calcKindString[calcKindNumber];
     }
     
+    /**
+     答えの桁数を設定する
+    */
+    func setAnswerDigit (resultLabel : UILabel) {
+        self.answerDigit = resultLabel.text!.count
+    }
+    
+    /**
+     答えを入力する
+    */
+    func pushedKeyboardButton (buttonTag : Int) {
+        if buttonTag < 10 {
+            self.answerLabel.text?.append(contentsOf: buttonTag.description)
+        }
+        else if buttonTag == 10 {
+            NSLog("一文字削除")
+        } else if buttonTag == 11 {
+            NSLog("即答")
+        }
+    }
+    
+    /**
+     問題のセルの高さを返す
+     */
     class public func cellHeight() -> CGFloat {
         return 44.0
     }

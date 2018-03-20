@@ -16,66 +16,6 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="264"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nar-j5-fl8">
-                    <rect key="frame" x="133" y="10" width="109" height="55"/>
-                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="109" id="OzY-cq-k53"/>
-                        <constraint firstAttribute="height" constant="55" id="m90-iX-EDy"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
-                    <state key="normal" title="2">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </state>
-                    <connections>
-                        <action selector="pushedNumberButton:" destination="-1" eventType="touchUpInside" id="mwn-iA-0HS"/>
-                    </connections>
-                </button>
-                <button opaque="NO" clipsSubviews="YES" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ifQ-Lu-5I8">
-                    <rect key="frame" x="133" y="73" width="109" height="55"/>
-                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="55" id="GgC-u7-XGx"/>
-                        <constraint firstAttribute="width" constant="109" id="SpY-pM-505"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
-                    <state key="normal" title="5">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </state>
-                    <connections>
-                        <action selector="pushedNumberButton:" destination="-1" eventType="touchUpInside" id="MgB-BE-wiZ"/>
-                    </connections>
-                </button>
-                <button opaque="NO" clipsSubviews="YES" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wXn-SY-URu">
-                    <rect key="frame" x="133" y="136" width="109" height="55"/>
-                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="55" id="OU2-gY-t1y"/>
-                        <constraint firstAttribute="width" constant="109" id="Wsj-Ec-O0g"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
-                    <state key="normal" title="8">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </state>
-                    <connections>
-                        <action selector="pushedNumberButton:" destination="-1" eventType="touchUpInside" id="RzG-ll-2Jf"/>
-                    </connections>
-                </button>
-                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lR2-Y0-fnf">
-                    <rect key="frame" x="133" y="199" width="109" height="55"/>
-                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="109" id="IB2-cP-cYZ"/>
-                        <constraint firstAttribute="height" constant="55" id="ugY-tp-mlv"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
-                    <state key="normal" title="0">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </state>
-                    <connections>
-                        <action selector="pushedNumberButton:" destination="-1" eventType="touchUpInside" id="jvo-bf-hEB"/>
-                    </connections>
-                </button>
                 <button opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JPw-52-LMy">
                     <rect key="frame" x="16" y="10" width="109" height="55"/>
                     <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -91,49 +31,19 @@
                         <action selector="pushedNumberButton:" destination="-1" eventType="touchUpInside" id="VYA-7X-b8a"/>
                     </connections>
                 </button>
-                <button opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0HE-U7-Gb0">
-                    <rect key="frame" x="16" y="73" width="109" height="55"/>
+                <button opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nar-j5-fl8">
+                    <rect key="frame" x="133" y="10" width="109" height="55"/>
                     <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="55" id="7tD-5n-Bzr"/>
-                        <constraint firstAttribute="width" constant="109" id="jcF-Mx-qVH"/>
+                        <constraint firstAttribute="width" constant="109" id="OzY-cq-k53"/>
+                        <constraint firstAttribute="height" constant="55" id="m90-iX-EDy"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
-                    <state key="normal" title="4">
+                    <state key="normal" title="2">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                     <connections>
-                        <action selector="pushedNumberButton:" destination="-1" eventType="touchUpInside" id="vqb-ra-U28"/>
-                    </connections>
-                </button>
-                <button opaque="NO" clipsSubviews="YES" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XMG-1w-XfB">
-                    <rect key="frame" x="16" y="136" width="109" height="55"/>
-                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="109" id="bYk-E3-MPC"/>
-                        <constraint firstAttribute="height" constant="55" id="yWK-En-rMQ"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
-                    <state key="normal" title="7">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </state>
-                    <connections>
-                        <action selector="pushedNumberButton:" destination="-1" eventType="touchUpInside" id="dWJ-2W-tzG"/>
-                    </connections>
-                </button>
-                <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vtr-YW-2o9">
-                    <rect key="frame" x="16" y="199" width="109" height="55"/>
-                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="55" id="0M5-Ej-Kth"/>
-                        <constraint firstAttribute="width" constant="109" id="vq9-zd-1wH"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                    <state key="normal" title="一文字削除">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </state>
-                    <connections>
-                        <action selector="pushedNumberButton:" destination="-1" eventType="touchUpInside" id="Mci-QD-kDQ"/>
+                        <action selector="pushedNumberButton:" destination="-1" eventType="touchUpInside" id="mwn-iA-0HS"/>
                     </connections>
                 </button>
                 <button opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y9U-R1-0cM">
@@ -151,6 +61,36 @@
                         <action selector="pushedNumberButton:" destination="-1" eventType="touchUpInside" id="aH9-9F-ubJ"/>
                     </connections>
                 </button>
+                <button opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0HE-U7-Gb0">
+                    <rect key="frame" x="16" y="73" width="109" height="55"/>
+                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="55" id="7tD-5n-Bzr"/>
+                        <constraint firstAttribute="width" constant="109" id="jcF-Mx-qVH"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                    <state key="normal" title="4">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="pushedNumberButton:" destination="-1" eventType="touchUpInside" id="vqb-ra-U28"/>
+                    </connections>
+                </button>
+                <button opaque="NO" clipsSubviews="YES" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ifQ-Lu-5I8">
+                    <rect key="frame" x="133" y="73" width="109" height="55"/>
+                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="55" id="GgC-u7-XGx"/>
+                        <constraint firstAttribute="width" constant="109" id="SpY-pM-505"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                    <state key="normal" title="5">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="pushedNumberButton:" destination="-1" eventType="touchUpInside" id="MgB-BE-wiZ"/>
+                    </connections>
+                </button>
                 <button opaque="NO" clipsSubviews="YES" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fgf-h3-3ZZ">
                     <rect key="frame" x="250" y="73" width="109" height="55"/>
                     <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -166,6 +106,36 @@
                         <action selector="pushedNumberButton:" destination="-1" eventType="touchUpInside" id="v9g-fu-YQ3"/>
                     </connections>
                 </button>
+                <button opaque="NO" clipsSubviews="YES" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XMG-1w-XfB">
+                    <rect key="frame" x="16" y="136" width="109" height="55"/>
+                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="109" id="bYk-E3-MPC"/>
+                        <constraint firstAttribute="height" constant="55" id="yWK-En-rMQ"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                    <state key="normal" title="7">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="pushedNumberButton:" destination="-1" eventType="touchUpInside" id="dWJ-2W-tzG"/>
+                    </connections>
+                </button>
+                <button opaque="NO" clipsSubviews="YES" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wXn-SY-URu">
+                    <rect key="frame" x="133" y="136" width="109" height="55"/>
+                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="55" id="OU2-gY-t1y"/>
+                        <constraint firstAttribute="width" constant="109" id="Wsj-Ec-O0g"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                    <state key="normal" title="8">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="pushedNumberButton:" destination="-1" eventType="touchUpInside" id="RzG-ll-2Jf"/>
+                    </connections>
+                </button>
                 <button opaque="NO" clipsSubviews="YES" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6LD-WR-HFA">
                     <rect key="frame" x="250" y="136" width="109" height="55"/>
                     <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -179,6 +149,36 @@
                     </state>
                     <connections>
                         <action selector="pushedNumberButton:" destination="-1" eventType="touchUpInside" id="aZU-Rd-Rkp"/>
+                    </connections>
+                </button>
+                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lR2-Y0-fnf">
+                    <rect key="frame" x="133" y="199" width="109" height="55"/>
+                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="109" id="IB2-cP-cYZ"/>
+                        <constraint firstAttribute="height" constant="55" id="ugY-tp-mlv"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                    <state key="normal" title="0">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="pushedNumberButton:" destination="-1" eventType="touchUpInside" id="jvo-bf-hEB"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vtr-YW-2o9">
+                    <rect key="frame" x="16" y="199" width="109" height="55"/>
+                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="55" id="0M5-Ej-Kth"/>
+                        <constraint firstAttribute="width" constant="109" id="vq9-zd-1wH"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                    <state key="normal" title="一文字削除">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="pushedNumberButton:" destination="-1" eventType="touchUpInside" id="Mci-QD-kDQ"/>
                     </connections>
                 </button>
                 <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gLX-8Y-68i">
