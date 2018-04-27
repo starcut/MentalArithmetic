@@ -18,35 +18,36 @@ class CalculationViewController: UIViewController, UITableViewDelegate, UITableV
     let CHECK_POINT_CELL_IDENTIFIER = "CheckPointCell"
     
     @IBOutlet var tableView : UITableView!
-    @IBOutlet var keyboardView : InputBoard!
+    //@IBOutlet var keyboardView : InputBoard!
     
     // 時間などのステータスビュー
     var headerView : CalcStatusView!
     // タイマー
     var timeUpdate : Timer!
     // 問題番号
-    var questionNumber : Int!;
+    var questionNumber : Int!
     // 正答数
-    var correctAnwerCount : Int!;
+    var correctAnwerCount : Int!
     // 現在の問題番号
-    var currentQuestionNumber : Int!;
+    var currentQuestionNumber : Int!
+    // セル番号
+    var indexPathNumber : Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.questionNumber = 1;
-        self.correctAnwerCount = 0;
-        self.currentQuestionNumber = 1;
+        self.questionNumber = 1
+        self.correctAnwerCount = 0
+        self.currentQuestionNumber = 1
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        
         self.setQuestionCell()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        self.keyboardView = InputBoard.init(frame: self.keyboardView.frame)
         
         self.headerView = CalcStatusView(frame: CGRect(x: 0, y: 0, width: 300, height: CalcStatusView.viewHeight()))
         self.headerView.calcStatusInit(time: 300, hiScore: 0, score: 0)
@@ -78,7 +79,7 @@ class CalculationViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     //MARK : UITableViewDelegate
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
         return self.headerView
     }
     // セクションの数
@@ -88,7 +89,7 @@ class CalculationViewController: UIViewController, UITableViewDelegate, UITableV
     
     // 1セクション毎のセルの数
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 100;
+        return 100
     }
     
     // ヘッダーの高さを設定する
@@ -123,11 +124,26 @@ class CalculationViewController: UIViewController, UITableViewDelegate, UITableV
     @objc func updateStatusPerSecond(tm : Timer) {
         self.headerView.minusTime()
         
-        self.focusNextQuestion()
+        //self.focusNextQuestion()
     }
     
-    func inputAnwer() {
+    /**
+     答えを入力する
+     */
+    @IBAction func pushKeyboardButton (_ sender: Any) {
+        let buttonTag : Int = (sender as! UIButton).tag
         
+        let currentQuestionView : QuestionCell = self.tableView!.viewWithTag(currentQuestionNumber) as! QuestionCell
+        currentQuestionView.backgroundColor = UIColor.orange
+        if buttonTag < 10 {
+            currentQuestionView.answerLabel.text?.append(buttonTag.description)
+            NSLog("%d", buttonTag)
+        }
+        else if buttonTag == 10 {
+            NSLog("一文字削除")
+        } else if buttonTag == 11 {
+            NSLog("即答")
+        }
     }
     
     func focusNextQuestion() {
@@ -136,11 +152,12 @@ class CalculationViewController: UIViewController, UITableViewDelegate, UITableV
             = UIColor.clear
         
         currentQuestionNumber! += 1
-        
+        // 10の倍数番目の問題が終わった時、チェックポイントのセル分余計に動く
         var focusNextQuestionAnimation : CGFloat = QuestionCell.cellHeight()
         if currentQuestionNumber > 10 && currentQuestionNumber % 10 == 3 {
             focusNextQuestionAnimation += CheckPointCell.cellHeight()
         }
+        // 最初は例外的な動きをする
         if currentQuestionNumber > 2 {
             tableView.setContentOffset(CGPoint.init(x: tableView.contentOffset.x, y: tableView.contentOffset.y + focusNextQuestionAnimation), animated: true)
         }

@@ -22,7 +22,6 @@ class QuestionCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -109,9 +108,10 @@ class QuestionCell: UITableViewCell {
     /**
      答えを入力する
     */
-    func pushedKeyboardButton (buttonTag : Int) {
+    func pushKeyboardButton (buttonTag : Int) {
         if buttonTag < 10 {
-            self.answerLabel.text?.append(contentsOf: buttonTag.description)
+            //self.answerLabel.text?.append(contentsOf: buttonTag.description)
+            NSLog("%d", buttonTag)
         }
         else if buttonTag == 10 {
             NSLog("一文字削除")

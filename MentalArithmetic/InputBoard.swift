@@ -8,7 +8,13 @@
 
 import UIKit
 
+protocol PushedKeyboardDelegate {
+    func pushKeyboardButton(buttonTag : Int)
+}
+
 class InputBoard: UIView {
+    var delegate : PushedKeyboardDelegate?
+    
     override init(frame: CGRect){
         super.init(frame: frame)
         loadNib()
@@ -26,8 +32,8 @@ class InputBoard: UIView {
     }
     
     @IBAction func pushedNumberButton(_ sender: Any) {
-        var pushedButtonTag : Int = (sender as! UIButton).tag
-        // 一文字削除が押された
+        self.delegate?.pushKeyboardButton(buttonTag: (sender as! UIButton).tag)
+        /*// 一文字削除が押された
         if pushedButtonTag == 10 {
             NSLog("一文字削除")
         }
@@ -37,6 +43,6 @@ class InputBoard: UIView {
         }
         else {
             NSLog("")
-        }
+        }*/
     }
 }
