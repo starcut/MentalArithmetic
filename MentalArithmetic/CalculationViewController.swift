@@ -92,7 +92,7 @@ class CalculationViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     //MARK : UITableViewDelegate
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         return self.headerView
     }
     // セクションの数
