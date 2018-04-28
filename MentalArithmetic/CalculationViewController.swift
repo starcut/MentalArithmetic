@@ -137,12 +137,17 @@ class CalculationViewController: UIViewController, UITableViewDelegate, UITableV
         currentQuestionView.backgroundColor = UIColor.orange
         if buttonTag < 10 {
             currentQuestionView.answerLabel.text?.append(buttonTag.description)
-            NSLog("%d", buttonTag)
         }
         else if buttonTag == 10 {
-            NSLog("一文字削除")
+            if currentQuestionView.answerLabel.text!.count > 0 {
+                currentQuestionView.answerLabel.text?.remove(at: (currentQuestionView.answerLabel.text?.index((currentQuestionView.answerLabel.text?.startIndex)!, offsetBy: (currentQuestionView.answerLabel.text?.count)! - 1))!)
+            }
         } else if buttonTag == 11 {
-            NSLog("即答")
+            currentQuestionView.answerLabel.text? = currentQuestionView.resultLabel.text!
+        }
+        
+        if currentQuestionView.answerLabel.text?.count == currentQuestionView.resultLabel.text?.count {
+            self.focusNextQuestion()
         }
     }
     
