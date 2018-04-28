@@ -9,6 +9,21 @@
 import UIKit
 
 class CalculationViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    enum PushedButtonKey :Int {
+        case ButtonKeyZero = 0
+        case ButtonKeyOne
+        case ButtonKeyTwo
+        case ButtonKeyThree
+        case ButtonKeyFour
+        case ButtonKeyFive
+        case ButtonKeySix
+        case ButtonKeySeven
+        case ButtonKeyEight
+        case ButtonKeyNine
+        case ButtonKeyDelete
+        case ButtonKeyCheat
+    }
+    
     // 読み込むNIBファイルのクラス名
     let QUESTION_CELL_NIB = "QuestionCell"
     let CHECK_POINT_CELL_NIB = "CheckPointCell"
@@ -134,15 +149,14 @@ class CalculationViewController: UIViewController, UITableViewDelegate, UITableV
         let buttonTag : Int = (sender as! UIButton).tag
         
         let currentQuestionView : QuestionCell = self.tableView!.viewWithTag(currentQuestionNumber) as! QuestionCell
-        currentQuestionView.backgroundColor = UIColor.orange
-        if buttonTag < 10 {
+        if buttonTag <= PushedButtonKey.ButtonKeyNine.rawValue {
             currentQuestionView.answerLabel.text?.append(buttonTag.description)
         }
-        else if buttonTag == 10 {
+        else if buttonTag == PushedButtonKey.ButtonKeyDelete.rawValue {
             if currentQuestionView.answerLabel.text!.count > 0 {
                 currentQuestionView.answerLabel.text?.remove(at: (currentQuestionView.answerLabel.text?.index((currentQuestionView.answerLabel.text?.startIndex)!, offsetBy: (currentQuestionView.answerLabel.text?.count)! - 1))!)
             }
-        } else if buttonTag == 11 {
+        } else if buttonTag == PushedButtonKey.ButtonKeyCheat.rawValue {
             currentQuestionView.answerLabel.text? = currentQuestionView.resultLabel.text!
         }
         
