@@ -15,11 +15,11 @@ class QuestionCell: UITableViewCell {
     @IBOutlet var calckindLabel : UILabel!
     @IBOutlet var resultLabel : UILabel!
     
+    // 計算記号の種類
     let calcKindString : [String] = ["＋", "−", "×", "÷"]
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -31,9 +31,9 @@ class QuestionCell: UITableViewCell {
     /**
      計算式を作る
      */
-    func createCalcQuestion() -> Void {
+    func createCalcQuestion() {
         // 計算の種類を決定する
-        var calcKind = (Int)(arc4random_uniform(4))
+        let calcKind = (Int)(arc4random_uniform(4))
         self.setCalcKind(calcKindNumber: calcKind)
         var firstNumber : Int
         var secondNumber : Int
@@ -95,6 +95,9 @@ class QuestionCell: UITableViewCell {
         self.calckindLabel.text = calcKindString[calcKindNumber];
     }
     
+    /**
+     問題のセルの高さを返す
+     */
     class public func cellHeight() -> CGFloat {
         return 44.0
     }
