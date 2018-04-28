@@ -17,8 +17,6 @@ class QuestionCell: UITableViewCell {
     
     // 計算記号の種類
     let calcKindString : [String] = ["＋", "−", "×", "÷"]
-    // 桁数
-    var answerDigit: Int = 1
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -81,7 +79,6 @@ class QuestionCell: UITableViewCell {
             default:
                 break;
             }
-        self.setAnswerDigit(resultLabel: self.resultLabel)
     }
     
     /**
@@ -96,28 +93,6 @@ class QuestionCell: UITableViewCell {
      */
     func setCalcKind (calcKindNumber : Int) -> Void {
         self.calckindLabel.text = calcKindString[calcKindNumber];
-    }
-    
-    /**
-     答えの桁数を設定する
-    */
-    func setAnswerDigit (resultLabel : UILabel) {
-        self.answerDigit = resultLabel.text!.count
-    }
-    
-    /**
-     答えを入力する
-    */
-    func pushKeyboardButton (buttonTag : Int) {
-        if buttonTag < 10 {
-            //self.answerLabel.text?.append(contentsOf: buttonTag.description)
-            NSLog("%d", buttonTag)
-        }
-        else if buttonTag == 10 {
-            NSLog("一文字削除")
-        } else if buttonTag == 11 {
-            NSLog("即答")
-        }
     }
     
     /**

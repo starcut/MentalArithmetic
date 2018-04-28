@@ -61,7 +61,6 @@ class CalcStatusView: UIView {
         self.timeLabel.text = "\(self.nowTime!)"
         self.timeMeter.frame.size = CGSize.init(width: meterLength,
                                                 height: self.timeMeter.frame.size.height)
-        NSLog("%f %f %f", remainingTime, meterLength, self.timeMeter.frame.size.width)
     }
     
     // ハイスコアを設定する

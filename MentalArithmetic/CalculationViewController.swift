@@ -33,7 +33,6 @@ class CalculationViewController: UIViewController, UITableViewDelegate, UITableV
     let CHECK_POINT_CELL_IDENTIFIER = "CheckPointCell"
     
     @IBOutlet var tableView : UITableView!
-    //@IBOutlet var keyboardView : InputBoard!
     
     // 時間などのステータスビュー
     var headerView : CalcStatusView!
@@ -82,7 +81,6 @@ class CalculationViewController: UIViewController, UITableViewDelegate, UITableV
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     // セルのxibファイルをキャッシュに登録
@@ -138,8 +136,6 @@ class CalculationViewController: UIViewController, UITableViewDelegate, UITableV
     // 1秒毎に呼ばれるメソッド
     @objc func updateStatusPerSecond(tm : Timer) {
         self.headerView.minusTime()
-        
-        //self.focusNextQuestion()
     }
     
     /**
@@ -178,7 +174,9 @@ class CalculationViewController: UIViewController, UITableViewDelegate, UITableV
         }
         // 最初は例外的な動きをする
         if currentQuestionNumber > 2 {
-            tableView.setContentOffset(CGPoint.init(x: tableView.contentOffset.x, y: tableView.contentOffset.y + focusNextQuestionAnimation), animated: true)
+            tableView.setContentOffset(CGPoint.init(x: tableView.contentOffset.x,
+                                                    y: tableView.contentOffset.y + focusNextQuestionAnimation),
+                                                    animated: true)
         }
         
         let currentQuestionView : QuestionCell = self.tableView!.viewWithTag(currentQuestionNumber) as! QuestionCell
