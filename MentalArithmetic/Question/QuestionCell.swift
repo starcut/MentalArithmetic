@@ -96,6 +96,20 @@ class QuestionCell: UITableViewCell {
     }
     
     /**
+     正誤判定処理を行う
+     */
+    func judgeCalcResult (inputAnswer : String, calcResult : String) {
+        if inputAnswer == calcResult {
+            self.resultLabel.text? = "正解"
+            self.resultLabel.textColor = UIColor.blue
+        }
+        else {
+            self.resultLabel.textColor = UIColor.red
+        }
+        self.resultLabel.isHidden = false;
+    }
+    
+    /**
      問題のセルの高さを返す
      */
     class public func cellHeight() -> CGFloat {

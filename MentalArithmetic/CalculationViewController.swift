@@ -157,6 +157,8 @@ class CalculationViewController: UIViewController, UITableViewDelegate, UITableV
         }
         
         if currentQuestionView.answerLabel.text?.count == currentQuestionView.resultLabel.text?.count {
+            currentQuestionView.judgeCalcResult(inputAnswer: currentQuestionView.answerLabel.text!,
+                                                calcResult: currentQuestionView.resultLabel.text!)
             self.focusNextQuestion()
         }
     }
@@ -179,6 +181,7 @@ class CalculationViewController: UIViewController, UITableViewDelegate, UITableV
                                                     animated: true)
         }
         
+        // 現在の問題のセルの色を変える
         let currentQuestionView : QuestionCell = self.tableView!.viewWithTag(currentQuestionNumber) as! QuestionCell
         currentQuestionView.backgroundColor
             = UIColor.cyan
