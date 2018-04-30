@@ -145,18 +145,24 @@ class CalculationViewController: UIViewController, UITableViewDelegate, UITableV
         let buttonTag : Int = (sender as! UIButton).tag
         
         let currentQuestionView : QuestionCell = self.tableView!.viewWithTag(currentQuestionNumber) as! QuestionCell
+        // 数字ボタン
         if buttonTag <= PushedButtonKey.ButtonKeyNine.rawValue {
             currentQuestionView.answerLabel.text?.append(buttonTag.description)
         }
+        // 削除ボタン
         else if buttonTag == PushedButtonKey.ButtonKeyDelete.rawValue {
             if currentQuestionView.answerLabel.text!.count > 0 {
                 currentQuestionView.answerLabel.text?.remove(at: (currentQuestionView.answerLabel.text?.index((currentQuestionView.answerLabel.text?.startIndex)!, offsetBy: (currentQuestionView.answerLabel.text?.count)! - 1))!)
             }
-        } else if buttonTag == PushedButtonKey.ButtonKeyCheat.rawValue {
+        }
+        // 即答ボタン
+        else if buttonTag == PushedButtonKey.ButtonKeyCheat.rawValue {
             currentQuestionView.answerLabel.text? = currentQuestionView.resultLabel.text!
         }
         
         if currentQuestionView.answerLabel.text?.count == currentQuestionView.resultLabel.text?.count {
+            currentQuestionView.judgeCalcResult(inputAnswer: currentQuestionView.answerLabel.text!,
+                                                calcResult: currentQuestionView.resultLabel.text!)
             self.focusNextQuestion()
         }
     }
@@ -179,6 +185,7 @@ class CalculationViewController: UIViewController, UITableViewDelegate, UITableV
                                                     animated: true)
         }
         
+        // 現在の問題のセルの色を変える
         let currentQuestionView : QuestionCell = self.tableView!.viewWithTag(currentQuestionNumber) as! QuestionCell
         currentQuestionView.backgroundColor
             = UIColor.cyan
