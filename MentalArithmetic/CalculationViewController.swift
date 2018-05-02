@@ -46,6 +46,8 @@ class CalculationViewController: UIViewController, UITableViewDelegate, UITableV
     var currentQuestionNumber : Int!
     // セル番号
     var indexPathNumber : Int!
+    // 点数
+    var score : Float!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,6 +74,9 @@ class CalculationViewController: UIViewController, UITableViewDelegate, UITableV
                                           selector: #selector(self.updateStatusPerSecond),
                                           userInfo: nil,
                                           repeats: true)
+        // 点数セット
+        self.score = 0;
+        self.headerView.setScore(score: self.score)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -164,6 +169,9 @@ class CalculationViewController: UIViewController, UITableViewDelegate, UITableV
             currentQuestionView.judgeCalcResult(inputAnswer: currentQuestionView.answerLabel.text!,
                                                 calcResult: currentQuestionView.resultLabel.text!)
             self.focusNextQuestion()
+            
+            self.score = self.score + self.addScore(calcKind: currentQuestionView.calcKind)
+            self.headerView.setScore(score: self.score)
         }
     }
     
@@ -189,5 +197,24 @@ class CalculationViewController: UIViewController, UITableViewDelegate, UITableV
         let currentQuestionView : QuestionCell = self.tableView!.viewWithTag(currentQuestionNumber) as! QuestionCell
         currentQuestionView.backgroundColor
             = UIColor.cyan
+    }
+    
+    func addScore(calcKind : Int) -> Float {
+        var add : Float = 0
+        
+        switch calcKind {
+            case 0:
+                add = 1
+            case 1:
+                add = 1
+            case 2:
+                add = 1.5
+            case 3:
+                add = 1.2
+            default:
+                add = 0
+        }
+        
+        return add
     }
 }
