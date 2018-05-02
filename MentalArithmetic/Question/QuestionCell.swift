@@ -17,6 +17,7 @@ class QuestionCell: UITableViewCell {
     
     // 計算記号の種類
     let calcKindString : [String] = ["＋", "−", "×", "÷"]
+    var calcKind : Int!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -33,7 +34,7 @@ class QuestionCell: UITableViewCell {
      */
     func createCalcQuestion() {
         // 計算の種類を決定する
-        let calcKind = (Int)(arc4random_uniform(4))
+        self.calcKind = (Int)(arc4random_uniform(4))
         self.setCalcKind(calcKindNumber: calcKind)
         var firstNumber : Int
         var secondNumber : Int
