@@ -40,8 +40,6 @@ class CalculationViewController: UIViewController, UITableViewDelegate, UITableV
     var questionCellArray : NSMutableArray! = NSMutableArray.init()
     // タイマー
     var timeUpdate : Timer!
-    // 問題番号
-    var questionNumber : Int!
     // 正答数
     var correctAnwerCount : Int!
     // 現在の問題番号
@@ -60,7 +58,6 @@ class CalculationViewController: UIViewController, UITableViewDelegate, UITableV
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.questionNumber = 1
         self.correctAnwerCount = 0
         self.currentQuestionNumber = 0
         
@@ -194,7 +191,6 @@ class CalculationViewController: UIViewController, UITableViewDelegate, UITableV
         
         currentQuestionNumber! += 1
         // 10の倍数番目の問題が終わった時、チェックポイントのセル分余計に動く
-        var focusNextQuestionAnimation : CGFloat = QuestionCell.cellHeight()
         /*if currentQuestionNumber > 10 && currentQuestionNumber % 10 == 3 {
             focusNextQuestionAnimation += CheckPointCell.cellHeight()
         }*/
