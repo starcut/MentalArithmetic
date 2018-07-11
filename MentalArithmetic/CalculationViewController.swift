@@ -65,9 +65,13 @@ class CalculationViewController: UIViewController, UITableViewDelegate, UITableV
         
         let initQuestionNum : Int = Int(ceil((self.tableView.frame.size.height - CalcStatusView.viewHeight()) / QuestionCell.cellHeight()))
         
-        for _ in 0..<initQuestionNum {
-            let cell : QuestionCell! = QuestionCell.initFromNib()
-            self.questionCellArray.add(cell)
+        for i in 0..<initQuestionNum {
+            if i > 0 && i % 11 == 0 {
+                self.questionCellArray.add(CheckPointCell.initFromNib())
+            }
+            else {
+                self.questionCellArray.add(QuestionCell.initFromNib())
+            }
         }
         
         // 現在の問題のセルの色を変える
@@ -119,9 +123,9 @@ class CalculationViewController: UIViewController, UITableViewDelegate, UITableV
     
     // セルの高さを設定する
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        /*if indexPath.row % 11 == 10 {
+        if indexPath.row % 11 == 0 && indexPath.row > 0 {
             return CheckPointCell.cellHeight()
-        }*/
+        }
         
         let view : UIView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.size.width, height: tableView.frame.size.height))
         view.backgroundColor = UIColor.red
@@ -131,11 +135,9 @@ class CalculationViewController: UIViewController, UITableViewDelegate, UITableV
     // MARK: UITableViewDataSource
     // セルの内容を設定する
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        /*if indexPath.row % 11 == 10 {
-            let checkPointCell : CheckPointCell = tableView.dequeueReusableCell(withIdentifier: CHECK_POINT_CELL_IDENTIFIER, for: indexPath) as! CheckPointCell
-            checkPointCell.setCheckPointLabelString(questionNumber: (indexPath.row / 11 + 1) * 10)
-            return checkPointCell
-        }*/
+        if indexPath.row % 11 == 0 && indexPath.row > 0 {
+            return self.questionCellArray.object(at: indexPath.row) as! CheckPointCell
+        }
         let cell : QuestionCell! = self.questionCellArray.object(at: indexPath.row) as! QuestionCell
         return cell
     }
@@ -180,21 +182,27 @@ class CalculationViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func focusNextQuestion() {
-        let cell : QuestionCell! = QuestionCell.initFromNib()
-        self.questionCellArray.add(cell)
-        tableView.reloadData()
-        
         let prevQuestionView : QuestionCell! =
             self.questionCellArray.object(at: currentQuestionNumber) as! QuestionCell
         prevQuestionView.backgroundColor
             = UIColor.clear
         
+        // チェックポイントの位置に来たらチェックポイントのセルを追加する
+        if self.questionCellArray.count % 11 == 0 && self.questionCellArray.count > 0 {
+            let cell : CheckPointCell! = CheckPointCell.initFromNib()
+            cell.setCheckPointLabelString(questionNumber: self.questionCellArray.count / 11 * 10)
+            self.questionCellArray.add(cell)
+        }
+        
+        let cell : QuestionCell! = QuestionCell.initFromNib()
+        self.questionCellArray.add(cell)
         currentQuestionNumber! += 1
-        // 10の倍数番目の問題が終わった時、チェックポイントのセル分余計に動く
-        /*if currentQuestionNumber > 10 && currentQuestionNumber % 10 == 3 {
-            focusNextQuestionAnimation += CheckPointCell.cellHeight()
-        }*/
-        // 最初は例外的な動きをする
+        if currentQuestionNumber! % 11 == 0 && currentQuestionNumber! > 0 {
+            currentQuestionNumber! += 1
+        }
+        
+        tableView.reloadData()
+        
         if currentQuestionNumber > 1 {
             let indexPath : IndexPath = NSIndexPath.init(row: currentQuestionNumber! - 1, section: 0) as IndexPath
             self.tableView.scrollToRow(at: indexPath, at: UITableViewScrollPosition.top, animated: true)

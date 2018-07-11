@@ -16,6 +16,11 @@ class CheckPointCell: UITableViewCell {
         // Initialization code
     }
 
+    class func initFromNib() -> CheckPointCell {
+        let className : String = String(describing: CheckPointCell.self)
+        return Bundle.main.loadNibNamed(className, owner: self, options: nil)?.first as! CheckPointCell
+    }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
