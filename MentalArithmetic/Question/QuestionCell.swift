@@ -21,8 +21,15 @@ class QuestionCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        self.createCalcQuestion()
     }
 
+    class func initFromNib() -> QuestionCell {
+        let className : String = String(describing: QuestionCell.self)
+        return Bundle.main.loadNibNamed(className, owner: self, options: nil)?.first as! QuestionCell
+    }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
