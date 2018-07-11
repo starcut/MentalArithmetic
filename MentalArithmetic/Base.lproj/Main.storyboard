@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aas-0O-7ID">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aas-0O-7ID">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment version="2304" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -60,17 +60,210 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8BI-qb-tJG">
-                                <rect key="frame" x="0.0" y="64" width="375" height="275"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8BI-qb-tJG">
+                                <rect key="frame" x="0.0" y="64" width="375" height="339"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qRE-9Z-Wvx">
+                                <rect key="frame" x="0.0" y="403" width="375" height="264"/>
+                                <subviews>
+                                    <button opaque="NO" clipsSubviews="YES" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xkv-T0-hJq" userLabel="Button8">
+                                        <rect key="frame" x="130.5" y="136" width="114" height="55"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                        <state key="normal" title="8">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="pushKeyboardButton:" destination="Ddh-b6-6dj" eventType="touchUpInside" id="U7j-OM-wGF"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="65h-Ox-9jc" userLabel="Button1">
+                                        <rect key="frame" x="8" y="10" width="114.5" height="55"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                        <state key="normal" title="1">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="pushKeyboardButton:" destination="Ddh-b6-6dj" eventType="touchUpInside" id="9Ph-A2-8gY"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KPB-5o-KHV">
+                                        <rect key="frame" x="252.5" y="199" width="114.5" height="55"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                        <state key="normal" title="即答">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="pushKeyboardButton:" destination="Ddh-b6-6dj" eventType="touchUpInside" id="U95-mF-ecd"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" clipsSubviews="YES" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ig-vX-bm4" userLabel="Button7">
+                                        <rect key="frame" x="8" y="136" width="114.5" height="55"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                        <state key="normal" title="7">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="pushKeyboardButton:" destination="Ddh-b6-6dj" eventType="touchUpInside" id="Mbr-ii-JOl"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HFO-ba-LmE" userLabel="Button3">
+                                        <rect key="frame" x="252.5" y="10" width="114.5" height="55"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                        <state key="normal" title="3">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="pushKeyboardButton:" destination="Ddh-b6-6dj" eventType="touchUpInside" id="a2Y-9b-IxW"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" clipsSubviews="YES" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Aq-Dj-pjh" userLabel="Button5">
+                                        <rect key="frame" x="130.5" y="73" width="114" height="55"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                        <state key="normal" title="5">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="pushKeyboardButton:" destination="Ddh-b6-6dj" eventType="touchUpInside" id="qU8-hz-Nad"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" clipsSubviews="YES" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NUt-of-NtN" userLabel="Button6">
+                                        <rect key="frame" x="252.5" y="73" width="114.5" height="55"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                        <state key="normal" title="6">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="pushKeyboardButton:" destination="Ddh-b6-6dj" eventType="touchUpInside" id="5Ft-0H-Bw2"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" clipsSubviews="YES" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pKG-U9-Ay6" userLabel="Button9">
+                                        <rect key="frame" x="252.5" y="136" width="114.5" height="55"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                        <state key="normal" title="9">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="pushKeyboardButton:" destination="Ddh-b6-6dj" eventType="touchUpInside" id="uM4-ni-zeQ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3xN-WI-Fe6" userLabel="Button2">
+                                        <rect key="frame" x="130.5" y="10" width="114" height="55"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                        <state key="normal" title="2">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="pushKeyboardButton:" destination="Ddh-b6-6dj" eventType="touchUpInside" id="U14-Sa-F1S"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mAe-74-SMV" userLabel="Button0">
+                                        <rect key="frame" x="130.5" y="199" width="114" height="55"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                        <state key="normal" title="0">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="pushKeyboardButton:" destination="Ddh-b6-6dj" eventType="touchUpInside" id="oPS-h4-ELs"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sk2-Th-ASV">
+                                        <rect key="frame" x="8" y="199" width="114.5" height="55"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <state key="normal" title="一文字削除">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="pushKeyboardButton:" destination="Ddh-b6-6dj" eventType="touchUpInside" id="neg-Wi-H0N"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sNN-2J-jbx" userLabel="Button4">
+                                        <rect key="frame" x="8" y="73" width="114.5" height="55"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                        <state key="normal" title="4">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="pushKeyboardButton:" destination="Ddh-b6-6dj" eventType="touchUpInside" id="mZE-46-JpB"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Xkv-T0-hJq" firstAttribute="height" secondItem="65h-Ox-9jc" secondAttribute="height" id="2RZ-1g-cER"/>
+                                    <constraint firstItem="pKG-U9-Ay6" firstAttribute="height" secondItem="65h-Ox-9jc" secondAttribute="height" id="3Lw-Em-3jC"/>
+                                    <constraint firstItem="mAe-74-SMV" firstAttribute="height" secondItem="65h-Ox-9jc" secondAttribute="height" id="3M3-lF-SCN"/>
+                                    <constraint firstItem="sk2-Th-ASV" firstAttribute="top" secondItem="9ig-vX-bm4" secondAttribute="bottom" constant="8" id="3xE-PB-fvO"/>
+                                    <constraint firstItem="Xkv-T0-hJq" firstAttribute="width" secondItem="65h-Ox-9jc" secondAttribute="width" id="58z-JE-3rW"/>
+                                    <constraint firstItem="KPB-5o-KHV" firstAttribute="height" secondItem="65h-Ox-9jc" secondAttribute="height" id="7rJ-pd-yeI"/>
+                                    <constraint firstItem="mAe-74-SMV" firstAttribute="centerX" secondItem="3xN-WI-Fe6" secondAttribute="centerX" id="8XP-up-Q2f"/>
+                                    <constraint firstItem="sk2-Th-ASV" firstAttribute="centerX" secondItem="65h-Ox-9jc" secondAttribute="centerX" id="9qL-uC-CM1"/>
+                                    <constraint firstItem="2Aq-Dj-pjh" firstAttribute="top" secondItem="3xN-WI-Fe6" secondAttribute="bottom" constant="8" id="Dvq-Cl-8Fj"/>
+                                    <constraint firstAttribute="height" constant="264" id="Dxt-sA-6ty"/>
+                                    <constraint firstItem="NUt-of-NtN" firstAttribute="top" secondItem="HFO-ba-LmE" secondAttribute="bottom" constant="8" id="E49-cF-wy8"/>
+                                    <constraint firstItem="65h-Ox-9jc" firstAttribute="leading" secondItem="qRE-9Z-Wvx" secondAttribute="leading" constant="8" id="EBB-Nc-ibV"/>
+                                    <constraint firstItem="sNN-2J-jbx" firstAttribute="height" secondItem="65h-Ox-9jc" secondAttribute="height" id="Evv-eR-dDL"/>
+                                    <constraint firstItem="HFO-ba-LmE" firstAttribute="leading" secondItem="3xN-WI-Fe6" secondAttribute="trailing" constant="8" id="F4d-aG-Dag"/>
+                                    <constraint firstItem="3xN-WI-Fe6" firstAttribute="centerX" secondItem="qRE-9Z-Wvx" secondAttribute="centerX" id="Fa7-D1-9RB"/>
+                                    <constraint firstAttribute="bottom" secondItem="mAe-74-SMV" secondAttribute="bottom" constant="10" id="HLl-KJ-B8g"/>
+                                    <constraint firstItem="sNN-2J-jbx" firstAttribute="centerX" secondItem="65h-Ox-9jc" secondAttribute="centerX" id="HNS-Tx-v41"/>
+                                    <constraint firstItem="KPB-5o-KHV" firstAttribute="centerX" secondItem="HFO-ba-LmE" secondAttribute="centerX" id="I6b-3k-Ufb"/>
+                                    <constraint firstAttribute="trailing" secondItem="HFO-ba-LmE" secondAttribute="trailing" constant="8" id="J7O-OS-RKt"/>
+                                    <constraint firstItem="9ig-vX-bm4" firstAttribute="top" secondItem="sNN-2J-jbx" secondAttribute="bottom" constant="8" id="Jfb-ic-a3w"/>
+                                    <constraint firstItem="NUt-of-NtN" firstAttribute="height" secondItem="65h-Ox-9jc" secondAttribute="height" id="LWm-2Y-UOG"/>
+                                    <constraint firstItem="HFO-ba-LmE" firstAttribute="centerY" secondItem="65h-Ox-9jc" secondAttribute="centerY" id="LdA-db-kzV"/>
+                                    <constraint firstItem="9ig-vX-bm4" firstAttribute="height" secondItem="65h-Ox-9jc" secondAttribute="height" id="M4U-Sq-Bmh"/>
+                                    <constraint firstItem="HFO-ba-LmE" firstAttribute="height" secondItem="65h-Ox-9jc" secondAttribute="height" id="MXk-OF-kS5"/>
+                                    <constraint firstItem="3xN-WI-Fe6" firstAttribute="centerY" secondItem="65h-Ox-9jc" secondAttribute="centerY" id="Mf2-pb-uYh"/>
+                                    <constraint firstItem="sNN-2J-jbx" firstAttribute="width" secondItem="65h-Ox-9jc" secondAttribute="width" id="WoZ-ep-IAU"/>
+                                    <constraint firstItem="3xN-WI-Fe6" firstAttribute="leading" secondItem="65h-Ox-9jc" secondAttribute="trailing" constant="8" id="XJC-Pn-hC0"/>
+                                    <constraint firstItem="mAe-74-SMV" firstAttribute="top" secondItem="Xkv-T0-hJq" secondAttribute="bottom" constant="8" id="YGz-kv-rwn"/>
+                                    <constraint firstItem="KPB-5o-KHV" firstAttribute="top" secondItem="pKG-U9-Ay6" secondAttribute="bottom" constant="8" id="ZDa-Ee-3Ow"/>
+                                    <constraint firstItem="sk2-Th-ASV" firstAttribute="height" secondItem="65h-Ox-9jc" secondAttribute="height" id="aXS-qT-AYY"/>
+                                    <constraint firstItem="2Aq-Dj-pjh" firstAttribute="height" secondItem="65h-Ox-9jc" secondAttribute="height" id="fLe-jO-2oW"/>
+                                    <constraint firstItem="NUt-of-NtN" firstAttribute="width" secondItem="65h-Ox-9jc" secondAttribute="width" id="fhe-rn-2mF"/>
+                                    <constraint firstItem="3xN-WI-Fe6" firstAttribute="top" secondItem="qRE-9Z-Wvx" secondAttribute="top" constant="10" id="ga6-kN-GI7"/>
+                                    <constraint firstItem="2Aq-Dj-pjh" firstAttribute="centerX" secondItem="3xN-WI-Fe6" secondAttribute="centerX" id="hO1-uh-ybh"/>
+                                    <constraint firstItem="3xN-WI-Fe6" firstAttribute="width" secondItem="65h-Ox-9jc" secondAttribute="width" id="iWp-YA-5Bg"/>
+                                    <constraint firstItem="9ig-vX-bm4" firstAttribute="centerX" secondItem="65h-Ox-9jc" secondAttribute="centerX" id="ihk-d1-4gL"/>
+                                    <constraint firstItem="pKG-U9-Ay6" firstAttribute="centerX" secondItem="HFO-ba-LmE" secondAttribute="centerX" id="lqB-g5-nj2"/>
+                                    <constraint firstItem="Xkv-T0-hJq" firstAttribute="top" secondItem="2Aq-Dj-pjh" secondAttribute="bottom" constant="8" id="ole-N9-SNU"/>
+                                    <constraint firstItem="KPB-5o-KHV" firstAttribute="width" secondItem="65h-Ox-9jc" secondAttribute="width" id="p5a-8b-HgZ"/>
+                                    <constraint firstItem="pKG-U9-Ay6" firstAttribute="top" secondItem="NUt-of-NtN" secondAttribute="bottom" constant="8" id="qeu-IO-7Ys"/>
+                                    <constraint firstItem="sNN-2J-jbx" firstAttribute="top" secondItem="65h-Ox-9jc" secondAttribute="bottom" constant="8" id="qyH-VN-M57"/>
+                                    <constraint firstItem="Xkv-T0-hJq" firstAttribute="centerX" secondItem="3xN-WI-Fe6" secondAttribute="centerX" id="rUI-Dw-DTR"/>
+                                    <constraint firstItem="2Aq-Dj-pjh" firstAttribute="width" secondItem="65h-Ox-9jc" secondAttribute="width" id="rao-kK-SIJ"/>
+                                    <constraint firstItem="mAe-74-SMV" firstAttribute="width" secondItem="65h-Ox-9jc" secondAttribute="width" id="sb4-bg-0VJ"/>
+                                    <constraint firstItem="pKG-U9-Ay6" firstAttribute="width" secondItem="65h-Ox-9jc" secondAttribute="width" id="u5f-Sh-jnR"/>
+                                    <constraint firstItem="3xN-WI-Fe6" firstAttribute="height" secondItem="65h-Ox-9jc" secondAttribute="height" id="uSb-BW-Wg5"/>
+                                    <constraint firstItem="9ig-vX-bm4" firstAttribute="width" secondItem="65h-Ox-9jc" secondAttribute="width" id="uqa-k9-KIU"/>
+                                    <constraint firstItem="NUt-of-NtN" firstAttribute="centerX" secondItem="HFO-ba-LmE" secondAttribute="centerX" id="xXf-F2-XPu"/>
+                                    <constraint firstItem="sk2-Th-ASV" firstAttribute="width" secondItem="65h-Ox-9jc" secondAttribute="width" id="yAk-PU-LRD"/>
+                                    <constraint firstItem="HFO-ba-LmE" firstAttribute="width" secondItem="65h-Ox-9jc" secondAttribute="width" id="zHD-Co-Z48"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="8BI-qb-tJG" firstAttribute="top" secondItem="n16-P6-NIy" secondAttribute="top" id="3c7-UX-gMu"/>
+                            <constraint firstItem="n16-P6-NIy" firstAttribute="bottom" secondItem="qRE-9Z-Wvx" secondAttribute="bottom" id="FQF-Tn-s0Y"/>
+                            <constraint firstItem="qRE-9Z-Wvx" firstAttribute="trailing" secondItem="n16-P6-NIy" secondAttribute="trailing" id="NZ1-Uo-dqI"/>
+                            <constraint firstItem="qRE-9Z-Wvx" firstAttribute="leading" secondItem="n16-P6-NIy" secondAttribute="leading" id="Ne0-9K-CRV"/>
                             <constraint firstItem="n16-P6-NIy" firstAttribute="trailing" secondItem="8BI-qb-tJG" secondAttribute="trailing" id="Smw-c3-NiZ"/>
                             <constraint firstItem="8BI-qb-tJG" firstAttribute="leading" secondItem="n16-P6-NIy" secondAttribute="leading" id="fwO-h0-tT9"/>
-                            <constraint firstItem="8BI-qb-tJG" firstAttribute="bottom" secondItem="n16-P6-NIy" secondAttribute="bottom" id="ugF-aH-Ldv"/>
+                            <constraint firstItem="qRE-9Z-Wvx" firstAttribute="top" secondItem="8BI-qb-tJG" secondAttribute="bottom" id="oBm-CA-qbI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="n16-P6-NIy"/>
                     </view>

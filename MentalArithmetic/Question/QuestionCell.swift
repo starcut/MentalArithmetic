@@ -15,13 +15,21 @@ class QuestionCell: UITableViewCell {
     @IBOutlet var calckindLabel : UILabel!
     @IBOutlet var resultLabel : UILabel!
     
+    // 計算記号の種類
     let calcKindString : [String] = ["＋", "−", "×", "÷"]
+    var calcKind : Int!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        self.createCalcQuestion()
     }
 
+    class func initFromNib() -> QuestionCell {
+        let className : String = String(describing: QuestionCell.self)
+        return Bundle.main.loadNibNamed(className, owner: self, options: nil)?.first as! QuestionCell
+    }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
@@ -31,9 +39,9 @@ class QuestionCell: UITableViewCell {
     /**
      計算式を作る
      */
-    func createCalcQuestion() -> Void {
+    func createCalcQuestion() {
         // 計算の種類を決定する
-        var calcKind = (Int)(arc4random_uniform(4))
+        self.calcKind = (Int)(arc4random_uniform(4))
         self.setCalcKind(calcKindNumber: calcKind)
         var firstNumber : Int
         var secondNumber : Int
@@ -47,7 +55,7 @@ class QuestionCell: UITableViewCell {
                 anwerNumbwer = firstNumber + secondNumber
                 self.setNumberToItem(inputNumber: firstNumber, calcItem: self.firstItem)
                 self.setNumberToItem(inputNumber: secondNumber, calcItem: self.secondItem)
-                self.setNumberToItem(inputNumber: anwerNumbwer, calcItem: self.answerLabel)
+                self.setNumberToItem(inputNumber: anwerNumbwer, calcItem: self.resultLabel)
                 break;
             // 引き算
             case 1:
@@ -56,7 +64,7 @@ class QuestionCell: UITableViewCell {
                 anwerNumbwer = firstNumber - secondNumber
                 self.setNumberToItem(inputNumber: firstNumber, calcItem: self.firstItem)
                 self.setNumberToItem(inputNumber: secondNumber, calcItem: self.secondItem)
-                self.setNumberToItem(inputNumber: anwerNumbwer, calcItem: self.answerLabel)
+                self.setNumberToItem(inputNumber: anwerNumbwer, calcItem: self.resultLabel)
                 break;
             // 掛け算
             case 2:
@@ -65,7 +73,7 @@ class QuestionCell: UITableViewCell {
                 anwerNumbwer = firstNumber * secondNumber
                 self.setNumberToItem(inputNumber: firstNumber, calcItem: self.firstItem)
                 self.setNumberToItem(inputNumber: secondNumber, calcItem: self.secondItem)
-                self.setNumberToItem(inputNumber: anwerNumbwer, calcItem: self.answerLabel)
+                self.setNumberToItem(inputNumber: anwerNumbwer, calcItem: self.resultLabel)
                 break;
             // 割り算
             case 3:
@@ -74,7 +82,7 @@ class QuestionCell: UITableViewCell {
                 firstNumber = secondNumber * anwerNumbwer
                 self.setNumberToItem(inputNumber: firstNumber, calcItem: self.firstItem)
                 self.setNumberToItem(inputNumber: secondNumber, calcItem: self.secondItem)
-                self.setNumberToItem(inputNumber: anwerNumbwer, calcItem: self.answerLabel)
+                self.setNumberToItem(inputNumber: anwerNumbwer, calcItem: self.resultLabel)
                 break;
             default:
                 break;
@@ -95,6 +103,23 @@ class QuestionCell: UITableViewCell {
         self.calckindLabel.text = calcKindString[calcKindNumber];
     }
     
+    /**
+     正誤判定処理を行う
+     */
+    func judgeCalcResult (inputAnswer : String, calcResult : String) {
+        if inputAnswer == calcResult {
+            self.resultLabel.text? = "正解"
+            self.resultLabel.textColor = UIColor.blue
+        }
+        else {
+            self.resultLabel.textColor = UIColor.red
+        }
+        self.resultLabel.isHidden = false;
+    }
+    
+    /**
+     問題のセルの高さを返す
+     */
     class public func cellHeight() -> CGFloat {
         return 44.0
     }

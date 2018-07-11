@@ -37,7 +37,7 @@ class CalcStatusView: UIView {
     }
     
     // 表示を初期化する
-    func calcStatusInit (time : Int, hiScore : Int, score : Int) {
+    func calcStatusInit (time : Int, hiScore : Float!, score : Float!) {
         self.maxTime = time
         self.nowTime = time
         self.timeMeter.frame.size.width = self.timeMeterBackground.frame.size.width
@@ -61,22 +61,21 @@ class CalcStatusView: UIView {
         self.timeLabel.text = "\(self.nowTime!)"
         self.timeMeter.frame.size = CGSize.init(width: meterLength,
                                                 height: self.timeMeter.frame.size.height)
-        NSLog("%f %f %f", remainingTime, meterLength, self.timeMeter.frame.size.width)
     }
     
     // ハイスコアを設定する
-    private func setHiScore (score : Int, hiScore : Int) {
+    func setHiScore (score : Float!, hiScore : Float!) {
         if score > hiScore {
-            self.hiScoreLabel.text = "\(score)"
+            self.hiScoreLabel.text = "\(score!)"
         }
         else {
-            self.hiScoreLabel.text = "\(hiScore)"
+            self.hiScoreLabel.text = "\(hiScore!)"
         }
     }
     
     // スコアを設定する
-    private func setScore (score : Int) {
-        self.scoreLabel.text = "\(score)"
+    func setScore (score : Float!) {
+        self.scoreLabel.text = "\(score!)"
     }
     
     // セルの高さを返す

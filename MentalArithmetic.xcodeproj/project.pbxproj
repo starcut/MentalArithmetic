@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FC28CCBE2042A906008B05B5 /* InputBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC28CCBD2042A906008B05B5 /* InputBoard.swift */; };
-		FC28CCC02042A915008B05B5 /* InputBoard.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC28CCBF2042A915008B05B5 /* InputBoard.xib */; };
 		FCB57852202495B400244642 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB57851202495B400244642 /* AppDelegate.swift */; };
 		FCB57854202495B400244642 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB57853202495B400244642 /* ViewController.swift */; };
 		FCB57857202495B400244642 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCB57855202495B400244642 /* Main.storyboard */; };
@@ -43,8 +41,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		FC28CCBD2042A906008B05B5 /* InputBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputBoard.swift; sourceTree = "<group>"; };
-		FC28CCBF2042A915008B05B5 /* InputBoard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InputBoard.xib; sourceTree = "<group>"; };
 		FCB5784E202495B400244642 /* MentalArithmetic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MentalArithmetic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCB57851202495B400244642 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCB57853202495B400244642 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -123,8 +119,6 @@
 				FCB5785A202495B400244642 /* LaunchScreen.storyboard */,
 				FCB5785D202495B400244642 /* Info.plist */,
 				FCB578812024972E00244642 /* Question */,
-				FC28CCBD2042A906008B05B5 /* InputBoard.swift */,
-				FC28CCBF2042A915008B05B5 /* InputBoard.xib */,
 			);
 			path = MentalArithmetic;
 			sourceTree = "<group>";
@@ -223,7 +217,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = stardust;
 				TargetAttributes = {
 					FCB5784D202495B400244642 = {
@@ -271,7 +265,6 @@
 				FCB5788B202DC56E00244642 /* QuestionCell.xib in Resources */,
 				FCB57859202495B400244642 /* Assets.xcassets in Resources */,
 				FCC91B32202EC05F00E578C3 /* CalcStatusView.xib in Resources */,
-				FC28CCC02042A915008B05B5 /* InputBoard.xib in Resources */,
 				FCB57857202495B400244642 /* Main.storyboard in Resources */,
 				FCB5788F202EA8B800244642 /* CheckPointCell.xib in Resources */,
 			);
@@ -302,7 +295,6 @@
 				FCB578852029C8DF00244642 /* CalculationViewController.swift in Sources */,
 				FCB57854202495B400244642 /* ViewController.swift in Sources */,
 				FCC91B30202EC05400E578C3 /* CalcStatusView.swift in Sources */,
-				FC28CCBE2042A906008B05B5 /* InputBoard.swift in Sources */,
 				FCB57852202495B400244642 /* AppDelegate.swift in Sources */,
 				FCB5788A202DC56E00244642 /* QuestionCell.swift in Sources */,
 			);
@@ -373,6 +365,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -380,6 +373,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -407,7 +401,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -430,6 +424,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -437,6 +432,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -458,7 +454,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
