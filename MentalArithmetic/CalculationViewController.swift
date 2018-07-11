@@ -36,6 +36,8 @@ class CalculationViewController: UIViewController, UITableViewDelegate, UITableV
     
     // 時間などのステータスビュー
     var headerView : CalcStatusView!
+    //
+    var questionCellArray : NSMutableArray! = NSMutableArray.init()
     // タイマー
     var timeUpdate : Timer!
     // 問題番号
@@ -52,21 +54,39 @@ class CalculationViewController: UIViewController, UITableViewDelegate, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.questionNumber = 1
-        self.correctAnwerCount = 0
-        self.currentQuestionNumber = 1
-        
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        
-        self.setQuestionCell()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.questionNumber = 1
+        self.correctAnwerCount = 0
+        self.currentQuestionNumber = 0
         
+        self.initHeaderSetting()
+        
+        let initQuestionNum : Int = Int(ceil((self.tableView.frame.size.height - CalcStatusView.viewHeight()) / QuestionCell.cellHeight()))
+        
+        for _ in 0..<initQuestionNum {
+            let cell : QuestionCell! = QuestionCell.initFromNib()
+            self.questionCellArray.add(cell)
+        }
+        
+        // 現在の問題のセルの色を変える
+        let currentQuestionView : QuestionCell! = self.questionCellArray.object(at: currentQuestionNumber) as! QuestionCell
+        currentQuestionView.backgroundColor
+            = UIColor.cyan
+    }
+    
+    func initHeaderSetting() {
+        // ヘッダー設定
         self.headerView = CalcStatusView(frame: CGRect(x: 0, y: 0, width: 300, height: CalcStatusView.viewHeight()))
         self.headerView.calcStatusInit(time: 300, hiScore: 0, score: 0)
+        
+        // 点数セット
+        self.score = 0;
+        self.headerView.setScore(score: self.score)
         
         // タイマーセット
         timeUpdate = Timer.scheduledTimer(timeInterval: 1.0,
@@ -74,9 +94,6 @@ class CalculationViewController: UIViewController, UITableViewDelegate, UITableV
                                           selector: #selector(self.updateStatusPerSecond),
                                           userInfo: nil,
                                           repeats: true)
-        // 点数セット
-        self.score = 0;
-        self.headerView.setScore(score: self.score)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -88,26 +105,14 @@ class CalculationViewController: UIViewController, UITableViewDelegate, UITableV
         super.didReceiveMemoryWarning()
     }
     
-    // セルのxibファイルをキャッシュに登録
-    private func setQuestionCell() {
-        let questionNib = UINib(nibName: QUESTION_CELL_NIB, bundle: nil)
-        self.tableView.register(questionNib, forCellReuseIdentifier: QUESTION_CELL_IDENTIFIER)
-        let checkPointNib = UINib(nibName: CHECK_POINT_CELL_NIB, bundle: nil)
-        self.tableView.register(checkPointNib, forCellReuseIdentifier: CHECK_POINT_CELL_IDENTIFIER)
-    }
-    
     //MARK : UITableViewDelegate
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         return self.headerView
     }
-    // セクションの数
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
     
     // 1セクション毎のセルの数
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 100
+        return self.questionCellArray.count
     }
     
     // ヘッダーの高さを設定する
@@ -117,24 +122,24 @@ class CalculationViewController: UIViewController, UITableViewDelegate, UITableV
     
     // セルの高さを設定する
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.row % 11 == 10 {
+        /*if indexPath.row % 11 == 10 {
             return CheckPointCell.cellHeight()
-        }
+        }*/
+        
+        let view : UIView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.size.width, height: tableView.frame.size.height))
+        view.backgroundColor = UIColor.red
         return QuestionCell.cellHeight()
     }
     
     // MARK: UITableViewDataSource
     // セルの内容を設定する
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row % 11 == 10 {
+        /*if indexPath.row % 11 == 10 {
             let checkPointCell : CheckPointCell = tableView.dequeueReusableCell(withIdentifier: CHECK_POINT_CELL_IDENTIFIER, for: indexPath) as! CheckPointCell
             checkPointCell.setCheckPointLabelString(questionNumber: (indexPath.row / 11 + 1) * 10)
             return checkPointCell
-        }
-        let cell = tableView.dequeueReusableCell(withIdentifier: QUESTION_CELL_IDENTIFIER, for: indexPath) as! QuestionCell
-        cell.createCalcQuestion()
-        cell.tag = questionNumber
-        questionNumber! += 1
+        }*/
+        let cell : QuestionCell! = self.questionCellArray.object(at: indexPath.row) as! QuestionCell
         return cell
     }
     
@@ -149,7 +154,8 @@ class CalculationViewController: UIViewController, UITableViewDelegate, UITableV
     @IBAction func pushKeyboardButton (_ sender: Any) {
         let buttonTag : Int = (sender as! UIButton).tag
         
-        let currentQuestionView : QuestionCell = self.tableView!.viewWithTag(currentQuestionNumber) as! QuestionCell
+        let currentQuestionView : QuestionCell! = self.questionCellArray.object(at: currentQuestionNumber) as! QuestionCell
+        currentQuestionView.backgroundColor = UIColor.red
         // 数字ボタン
         if buttonTag <= PushedButtonKey.ButtonKeyNine.rawValue {
             currentQuestionView.answerLabel.text?.append(buttonTag.description)
@@ -165,6 +171,7 @@ class CalculationViewController: UIViewController, UITableViewDelegate, UITableV
             currentQuestionView.answerLabel.text? = currentQuestionView.resultLabel.text!
         }
         
+        // 入力した桁数と答えの桁数が一致した時生後判定を行う
         if currentQuestionView.answerLabel.text?.count == currentQuestionView.resultLabel.text?.count {
             currentQuestionView.judgeCalcResult(inputAnswer: currentQuestionView.answerLabel.text!,
                                                 calcResult: currentQuestionView.resultLabel.text!)
@@ -176,25 +183,29 @@ class CalculationViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func focusNextQuestion() {
-        let prevQuestionView : QuestionCell = self.tableView!.viewWithTag(currentQuestionNumber) as! QuestionCell
+        let cell : QuestionCell! = QuestionCell.initFromNib()
+        self.questionCellArray.add(cell)
+        tableView.reloadData()
+        
+        let prevQuestionView : QuestionCell! =
+            self.questionCellArray.object(at: currentQuestionNumber) as! QuestionCell
         prevQuestionView.backgroundColor
             = UIColor.clear
         
         currentQuestionNumber! += 1
         // 10の倍数番目の問題が終わった時、チェックポイントのセル分余計に動く
         var focusNextQuestionAnimation : CGFloat = QuestionCell.cellHeight()
-        if currentQuestionNumber > 10 && currentQuestionNumber % 10 == 3 {
+        /*if currentQuestionNumber > 10 && currentQuestionNumber % 10 == 3 {
             focusNextQuestionAnimation += CheckPointCell.cellHeight()
-        }
+        }*/
         // 最初は例外的な動きをする
-        if currentQuestionNumber > 2 {
-            tableView.setContentOffset(CGPoint.init(x: tableView.contentOffset.x,
-                                                    y: tableView.contentOffset.y + focusNextQuestionAnimation),
-                                                    animated: true)
+        if currentQuestionNumber > 1 {
+            let indexPath : IndexPath = NSIndexPath.init(row: currentQuestionNumber! - 1, section: 0) as IndexPath
+            self.tableView.scrollToRow(at: indexPath, at: UITableViewScrollPosition.top, animated: true)
         }
         
         // 現在の問題のセルの色を変える
-        let currentQuestionView : QuestionCell = self.tableView!.viewWithTag(currentQuestionNumber) as! QuestionCell
+        let currentQuestionView : QuestionCell! = self.questionCellArray.object(at: currentQuestionNumber) as! QuestionCell
         currentQuestionView.backgroundColor
             = UIColor.cyan
     }
