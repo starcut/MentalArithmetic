@@ -8,15 +8,17 @@
 
 import UIKit
 
-class CalcStatusView: UIView {
+class CalcStatusView: UIView, UICollectionViewDelegate, UICollectionViewDataSource {
     @IBOutlet var timeLabel : UILabel!
     @IBOutlet var timeMeter : UILabel!
     @IBOutlet var timeMeterBackground : UILabel!
     @IBOutlet var scoreLabel : UILabel!
     @IBOutlet var hiScoreLabel : UILabel!
+    @IBOutlet var cheatArea : UICollectionView!
     
     var maxTime : Int!
     var nowTime : Int!
+    var cheatNum : Int!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -33,6 +35,7 @@ class CalcStatusView: UIView {
         let bundle = Bundle(for: type(of: self))
         let nib = UINib(nibName: "CalcStatusView", bundle: bundle)
         let view = nib.instantiate(withOwner: self, options: nil).first as! UIView
+        Utility.resizeForScreenWidth(resizeView: view)
         addSubview(view)
     }
     
@@ -44,6 +47,17 @@ class CalcStatusView: UIView {
         self.setTime(time: time)
         self.setHiScore(score: score, hiScore: hiScore)
         self.setScore(score: score)
+        
+        self.cheatArea.delegate = self
+        self.cheatArea.dataSource = self
+        
+        let nib : UINib = UINib.init(nibName: "CheatImageCell", bundle: nil)
+        self.cheatArea.register(nib, forCellWithReuseIdentifier: "cheatImage")
+    }
+    
+    func setCheatNum(cheatNum : Int!) {
+        self.cheatNum = cheatNum
+        self.cheatArea.reloadData()
     }
     
     // 残り時間を設定する
@@ -61,6 +75,9 @@ class CalcStatusView: UIView {
         self.timeLabel.text = "\(self.nowTime!)"
         self.timeMeter.frame.size = CGSize.init(width: meterLength,
                                                 height: self.timeMeter.frame.size.height)
+        print("\(self.timeMeter.frame)")
+        self.setNeedsLayout()
+        self.layoutIfNeeded()
     }
     
     // ハイスコアを設定する
@@ -78,8 +95,18 @@ class CalcStatusView: UIView {
         self.scoreLabel.text = "\(score!)"
     }
     
-    // セルの高さを返す
+    // ステータスビューの高さを返す
     static func viewHeight () -> CGFloat {
-        return 150.0
+        return 105.0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.cheatNum!
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell : CheatImageCell = collectionView.dequeueReusableCell(withReuseIdentifier: "cheatImage", for: indexPath) as! CheatImageCell
+        cell.frame.size.height = 29
+        return cell
     }
 }

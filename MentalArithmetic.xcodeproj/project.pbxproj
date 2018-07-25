@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FC38D1D620FCCA8500269ADA /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC38D1D520FCCA8500269ADA /* Utility.swift */; };
+		FC38D1DA20FDABAA00269ADA /* CheatImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC38D1D820FDABAA00269ADA /* CheatImageCell.swift */; };
+		FC38D1DB20FDABAA00269ADA /* CheatImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC38D1D920FDABAA00269ADA /* CheatImageCell.xib */; };
 		FCB57852202495B400244642 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB57851202495B400244642 /* AppDelegate.swift */; };
 		FCB57854202495B400244642 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB57853202495B400244642 /* ViewController.swift */; };
 		FCB57857202495B400244642 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCB57855202495B400244642 /* Main.storyboard */; };
@@ -41,6 +44,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FC38D1D520FCCA8500269ADA /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		FC38D1D820FDABAA00269ADA /* CheatImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheatImageCell.swift; sourceTree = "<group>"; };
+		FC38D1D920FDABAA00269ADA /* CheatImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheatImageCell.xib; sourceTree = "<group>"; };
 		FCB5784E202495B400244642 /* MentalArithmetic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MentalArithmetic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCB57851202495B400244642 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCB57853202495B400244642 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -88,6 +94,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FC38D1D720FCCA8D00269ADA /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				FC38D1D520FCCA8500269ADA /* Utility.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
 		FCB57845202495B400244642 = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +133,7 @@
 				FCB5785A202495B400244642 /* LaunchScreen.storyboard */,
 				FCB5785D202495B400244642 /* Info.plist */,
 				FCB578812024972E00244642 /* Question */,
+				FC38D1D720FCCA8D00269ADA /* Utility */,
 			);
 			path = MentalArithmetic;
 			sourceTree = "<group>";
@@ -150,6 +165,8 @@
 				FCB5788D202EA8B800244642 /* CheckPointCell.xib */,
 				FCC91B2F202EC05400E578C3 /* CalcStatusView.swift */,
 				FCC91B31202EC05F00E578C3 /* CalcStatusView.xib */,
+				FC38D1D820FDABAA00269ADA /* CheatImageCell.swift */,
+				FC38D1D920FDABAA00269ADA /* CheatImageCell.xib */,
 			);
 			path = Question;
 			sourceTree = "<group>";
@@ -264,6 +281,7 @@
 				FCB5785C202495B400244642 /* LaunchScreen.storyboard in Resources */,
 				FCB5788B202DC56E00244642 /* QuestionCell.xib in Resources */,
 				FCB57859202495B400244642 /* Assets.xcassets in Resources */,
+				FC38D1DB20FDABAA00269ADA /* CheatImageCell.xib in Resources */,
 				FCC91B32202EC05F00E578C3 /* CalcStatusView.xib in Resources */,
 				FCB57857202495B400244642 /* Main.storyboard in Resources */,
 				FCB5788F202EA8B800244642 /* CheckPointCell.xib in Resources */,
@@ -291,12 +309,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC38D1D620FCCA8500269ADA /* Utility.swift in Sources */,
 				FCB5788E202EA8B800244642 /* CheckPointCell.swift in Sources */,
 				FCB578852029C8DF00244642 /* CalculationViewController.swift in Sources */,
 				FCB57854202495B400244642 /* ViewController.swift in Sources */,
 				FCC91B30202EC05400E578C3 /* CalcStatusView.swift in Sources */,
 				FCB57852202495B400244642 /* AppDelegate.swift in Sources */,
 				FCB5788A202DC56E00244642 /* QuestionCell.swift in Sources */,
+				FC38D1DA20FDABAA00269ADA /* CheatImageCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

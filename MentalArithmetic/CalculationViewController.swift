@@ -48,6 +48,8 @@ class CalculationViewController: UIViewController, UITableViewDelegate, UITableV
     var indexPathNumber : Int!
     // 点数
     var score : Float!
+    // 即答の残り回数
+    var cheat : Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,8 +64,13 @@ class CalculationViewController: UIViewController, UITableViewDelegate, UITableV
         self.currentQuestionNumber = 0
         
         self.initHeaderSetting()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
-        let initQuestionNum : Int = Int(ceil((self.tableView.frame.size.height - CalcStatusView.viewHeight()) / QuestionCell.cellHeight()))
+        let initQuestionNumFloat : CGFloat = (self.tableView.frame.size.height - CalcStatusView.viewHeight()) / QuestionCell.cellHeight()
+        let initQuestionNum : Int = Int(initQuestionNumFloat.rounded(.up))
         
         for i in 0..<initQuestionNum {
             if i > 0 && i % 11 == 0 {
@@ -73,16 +80,12 @@ class CalculationViewController: UIViewController, UITableViewDelegate, UITableV
                 self.questionCellArray.add(QuestionCell.initFromNib())
             }
         }
-        
-        // 現在の問題のセルの色を変える
-        let currentQuestionView : QuestionCell! = self.questionCellArray.object(at: currentQuestionNumber) as! QuestionCell
-        currentQuestionView.backgroundColor
-            = UIColor.cyan
+        self.tableView.reloadData()
     }
     
     func initHeaderSetting() {
         // ヘッダー設定
-        self.headerView = CalcStatusView(frame: CGRect(x: 0, y: 0, width: 300, height: CalcStatusView.viewHeight()))
+        self.headerView = CalcStatusView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: CalcStatusView.viewHeight()))
         self.headerView.calcStatusInit(time: 300, hiScore: 0, score: 0)
         
         // 点数セット
@@ -95,6 +98,9 @@ class CalculationViewController: UIViewController, UITableViewDelegate, UITableV
                                           selector: #selector(self.updateStatusPerSecond),
                                           userInfo: nil,
                                           repeats: true)
+        
+        // 即答回数セット
+        self.headerView.setCheatNum(cheatNum: 3)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -127,8 +133,6 @@ class CalculationViewController: UIViewController, UITableViewDelegate, UITableV
             return CheckPointCell.cellHeight()
         }
         
-        let view : UIView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.size.width, height: tableView.frame.size.height))
-        view.backgroundColor = UIColor.red
         return QuestionCell.cellHeight()
     }
     
@@ -154,7 +158,6 @@ class CalculationViewController: UIViewController, UITableViewDelegate, UITableV
         let buttonTag : Int = (sender as! UIButton).tag
         
         let currentQuestionView : QuestionCell! = self.questionCellArray.object(at: currentQuestionNumber) as! QuestionCell
-        currentQuestionView.backgroundColor = UIColor.red
         // 数字ボタン
         if buttonTag <= PushedButtonKey.ButtonKeyNine.rawValue {
             currentQuestionView.answerLabel.text?.append(buttonTag.description)
@@ -167,7 +170,12 @@ class CalculationViewController: UIViewController, UITableViewDelegate, UITableV
         }
         // 即答ボタン
         else if buttonTag == PushedButtonKey.ButtonKeyCheat.rawValue {
-            currentQuestionView.answerLabel.text? = currentQuestionView.resultLabel.text!
+            if self.headerView.cheatNum! > 0 {
+                self.headerView.cheatNum! -= 1
+                self.headerView.setCheatNum(cheatNum: self.headerView.cheatNum!)
+                currentQuestionView.answerLabel.text? = currentQuestionView.resultLabel.text!
+            }
+            print("残り\(self.headerView.cheatNum!)回")
         }
         
         // 入力した桁数と答えの桁数が一致した時生後判定を行う
@@ -210,8 +218,6 @@ class CalculationViewController: UIViewController, UITableViewDelegate, UITableV
         
         // 現在の問題のセルの色を変える
         let currentQuestionView : QuestionCell! = self.questionCellArray.object(at: currentQuestionNumber) as! QuestionCell
-        currentQuestionView.backgroundColor
-            = UIColor.cyan
     }
     
     func addScore(calcKind : Int) -> Float {

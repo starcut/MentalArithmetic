@@ -200,7 +200,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.88749035599638548" green="1" blue="0.081719659956145385" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="Xkv-T0-hJq" firstAttribute="height" secondItem="65h-Ox-9jc" secondAttribute="height" id="2RZ-1g-cER"/>
                                     <constraint firstItem="pKG-U9-Ay6" firstAttribute="height" secondItem="65h-Ox-9jc" secondAttribute="height" id="3Lw-Em-3jC"/>
