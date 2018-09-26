@@ -68,7 +68,6 @@ class CalculationViewController: UIViewController, UITableViewDelegate, UITableV
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
         let initQuestionNumFloat : CGFloat = (self.tableView.frame.size.height - CalcStatusView.viewHeight()) / QuestionCell.cellHeight()
         let initQuestionNum : Int = Int(initQuestionNumFloat.rounded(.up))
         
@@ -86,7 +85,6 @@ class CalculationViewController: UIViewController, UITableViewDelegate, UITableV
     func initHeaderSetting() {
         // ヘッダー設定
         self.headerView = CalcStatusView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: CalcStatusView.viewHeight()))
-        self.headerView.calcStatusInit(time: 300, hiScore: 0, score: 0)
         
         // 点数セット
         self.score = 0;
@@ -98,6 +96,7 @@ class CalculationViewController: UIViewController, UITableViewDelegate, UITableV
                                           selector: #selector(self.updateStatusPerSecond),
                                           userInfo: nil,
                                           repeats: true)
+        self.headerView.calcStatusInit(time: 5, hiScore: 0, score: 0, timer: timeUpdate)
         
         // 即答回数セット
         self.headerView.setCheatNum(cheatNum: 3)
@@ -142,7 +141,7 @@ class CalculationViewController: UIViewController, UITableViewDelegate, UITableV
         if indexPath.row % 11 == 0 && indexPath.row > 0 {
             return self.questionCellArray.object(at: indexPath.row) as! CheckPointCell
         }
-        let cell : QuestionCell! = self.questionCellArray.object(at: indexPath.row) as! QuestionCell
+        let cell : QuestionCell! = self.questionCellArray.object(at: indexPath.row) as? QuestionCell
         return cell
     }
     
@@ -157,7 +156,7 @@ class CalculationViewController: UIViewController, UITableViewDelegate, UITableV
     @IBAction func pushKeyboardButton (_ sender: Any) {
         let buttonTag : Int = (sender as! UIButton).tag
         
-        let currentQuestionView : QuestionCell! = self.questionCellArray.object(at: currentQuestionNumber) as! QuestionCell
+        let currentQuestionView : QuestionCell! = self.questionCellArray.object(at: currentQuestionNumber) as? QuestionCell
         // 数字ボタン
         if buttonTag <= PushedButtonKey.ButtonKeyNine.rawValue {
             currentQuestionView.answerLabel.text?.append(buttonTag.description)
@@ -175,7 +174,6 @@ class CalculationViewController: UIViewController, UITableViewDelegate, UITableV
                 self.headerView.setCheatNum(cheatNum: self.headerView.cheatNum!)
                 currentQuestionView.answerLabel.text? = currentQuestionView.resultLabel.text!
             }
-            print("残り\(self.headerView.cheatNum!)回")
         }
         
         // 入力した桁数と答えの桁数が一致した時生後判定を行う
@@ -191,7 +189,7 @@ class CalculationViewController: UIViewController, UITableViewDelegate, UITableV
     
     func focusNextQuestion() {
         let prevQuestionView : QuestionCell! =
-            self.questionCellArray.object(at: currentQuestionNumber) as! QuestionCell
+            self.questionCellArray.object(at: currentQuestionNumber) as? QuestionCell
         prevQuestionView.backgroundColor
             = UIColor.clear
         

@@ -10,11 +10,12 @@ import UIKit
 
 class CalcStatusView: UIView, UICollectionViewDelegate, UICollectionViewDataSource {
     @IBOutlet var timeLabel : UILabel!
-    @IBOutlet var timeMeter : UILabel!
-    @IBOutlet var timeMeterBackground : UILabel!
+    @IBOutlet var timeMeter : UIView!
+    @IBOutlet var timeMeterBackground : UIView!
     @IBOutlet var scoreLabel : UILabel!
     @IBOutlet var hiScoreLabel : UILabel!
     @IBOutlet var cheatArea : UICollectionView!
+    @IBOutlet var timeMeterWidth : NSLayoutConstraint!
     
     var maxTime : Int!
     var nowTime : Int!
@@ -36,14 +37,31 @@ class CalcStatusView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
         let nib = UINib(nibName: "CalcStatusView", bundle: bundle)
         let view = nib.instantiate(withOwner: self, options: nil).first as! UIView
         Utility.resizeForScreenWidth(resizeView: view)
+        view.layoutIfNeeded()
         addSubview(view)
     }
     
     // 表示を初期化する
-    func calcStatusInit (time : Int, hiScore : Float!, score : Float!) {
+    func calcStatusInit (time : Int, hiScore : Float!, score : Float!, timer : Timer!) {
         self.maxTime = time
         self.nowTime = time
-        self.timeMeter.frame.size.width = self.timeMeterBackground.frame.size.width
+        self.timeMeterWidth.constant = self.timeMeterBackground.frame.size.width
+        self.setNeedsLayout()
+        self.layoutIfNeeded()
+        UIView.animate(withDuration: Double(self.maxTime),
+                       delay: 0.0,
+                       options: .curveLinear,
+                       animations: {
+                        self.timeMeterWidth.constant = 0.0
+                        self.setNeedsLayout()
+                        self.layoutIfNeeded()
+        },
+                       completion: {(success) in
+                        if timer.isValid {
+                            timer.invalidate()
+                        }
+        })
+        
         self.setTime(time: time)
         self.setHiScore(score: score, hiScore: hiScore)
         self.setScore(score: score)
@@ -67,17 +85,8 @@ class CalcStatusView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
     
     // 残り時間を1秒減らす
     func minusTime() {
-        let maxLength : CGFloat = self.timeMeterBackground.frame.size.width
-        let remainingTime : CGFloat = CGFloat(self.nowTime!)
-        let maxTime : CGFloat = CGFloat(self.maxTime)
-        let meterLength : CGFloat = maxLength * remainingTime / maxTime
         self.nowTime = self.nowTime - 1
         self.timeLabel.text = "\(self.nowTime!)"
-        self.timeMeter.frame.size = CGSize.init(width: meterLength,
-                                                height: self.timeMeter.frame.size.height)
-        print("\(self.timeMeter.frame)")
-        self.setNeedsLayout()
-        self.layoutIfNeeded()
     }
     
     // ハイスコアを設定する
